@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C13738CE1C5F1E2000CC1814 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738CD1C5F1E2000CC1814 /* AppDelegate.swift */; };
+		C13738D01C5F1E2000CC1814 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738CF1C5F1E2000CC1814 /* ViewController.swift */; };
+		C13738D51C5F1E2000CC1814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13738D41C5F1E2000CC1814 /* Assets.xcassets */; };
+		C13738D81C5F1E2000CC1814 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13738D61C5F1E2000CC1814 /* LaunchScreen.storyboard */; };
+		C13738E31C5F1F7000CC1814 /* RemoteCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738E01C5F1F7000CC1814 /* RemoteCalls.swift */; };
+		C13738E41C5F1F7000CC1814 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738E11C5F1F7000CC1814 /* Globals.swift */; };
+		C13738E51C5F1F7000CC1814 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738E21C5F1F7000CC1814 /* Utils.swift */; };
+		C13738F21C5F1FFE00CC1814 /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738E81C5F1FFE00CC1814 /* MoviesTableViewController.swift */; };
+		C13738F31C5F1FFE00CC1814 /* RemoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738E91C5F1FFE00CC1814 /* RemoteController.swift */; };
+		C13738F41C5F1FFE00CC1814 /* TvShowsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738EA1C5F1FFE00CC1814 /* TvShowsController.swift */; };
+		C13738F51C5F1FFE00CC1814 /* FilesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738EB1C5F1FFE00CC1814 /* FilesController.swift */; };
+		C13738F61C5F1FFE00CC1814 /* AddonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738EC1C5F1FFE00CC1814 /* AddonTableViewController.swift */; };
+		C13738F71C5F1FFE00CC1814 /* ArtistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738ED1C5F1FFE00CC1814 /* ArtistTableViewController.swift */; };
+		C13738F81C5F1FFE00CC1814 /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738EE1C5F1FFE00CC1814 /* AlbumsTableViewController.swift */; };
+		C13738F91C5F1FFE00CC1814 /* GenreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738EF1C5F1FFE00CC1814 /* GenreTableViewController.swift */; };
+		C13738FA1C5F1FFE00CC1814 /* AlbumDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738F01C5F1FFE00CC1814 /* AlbumDetailsTableViewController.swift */; };
+		C13738FB1C5F1FFE00CC1814 /* DiscoveryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738F11C5F1FFE00CC1814 /* DiscoveryTableViewController.swift */; };
+		C13739031C5F200900CC1814 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738FC1C5F200900CC1814 /* MoviesTableViewCell.swift */; };
+		C13739041C5F200900CC1814 /* AddonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738FD1C5F200900CC1814 /* AddonTableViewCell.swift */; };
+		C13739051C5F200900CC1814 /* ArtistsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738FE1C5F200900CC1814 /* ArtistsTableViewCell.swift */; };
+		C13739061C5F200900CC1814 /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738FF1C5F200900CC1814 /* AlbumsTableViewCell.swift */; };
+		C13739071C5F200900CC1814 /* GenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13739001C5F200900CC1814 /* GenreTableViewCell.swift */; };
+		C13739081C5F200900CC1814 /* AlbumDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13739011C5F200900CC1814 /* AlbumDetailsTableViewCell.swift */; };
+		C13739091C5F200900CC1814 /* DiscoveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13739021C5F200900CC1814 /* DiscoveryTableViewCell.swift */; };
+		C13739151C5F209A00CC1814 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13739131C5F209A00CC1814 /* Main.storyboard */; };
+		C137391A1C5F21B900CC1814 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13739171C5F21B900CC1814 /* BaseTabBarController.swift */; };
+		C137391B1C5F21B900CC1814 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13739181C5F21B900CC1814 /* BaseTableViewController.swift */; };
+		C137391C1C5F21B900CC1814 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13739191C5F21B900CC1814 /* NavigationBar.swift */; };
+		C137391F1C5F29D100CC1814 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C137391E1C5F29D100CC1814 /* SWRevealViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C13738CA1C5F1E2000CC1814 /* KodiRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KodiRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C13738CD1C5F1E2000CC1814 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C13738CF1C5F1E2000CC1814 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C13738D41C5F1E2000CC1814 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C13738D71C5F1E2000CC1814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C13738D91C5F1E2000CC1814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C13738E01C5F1F7000CC1814 /* RemoteCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteCalls.swift; sourceTree = "<group>"; };
+		C13738E11C5F1F7000CC1814 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		C13738E21C5F1F7000CC1814 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C13738E81C5F1FFE00CC1814 /* MoviesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
+		C13738E91C5F1FFE00CC1814 /* RemoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteController.swift; sourceTree = "<group>"; };
+		C13738EA1C5F1FFE00CC1814 /* TvShowsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowsController.swift; sourceTree = "<group>"; };
+		C13738EB1C5F1FFE00CC1814 /* FilesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesController.swift; sourceTree = "<group>"; };
+		C13738EC1C5F1FFE00CC1814 /* AddonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddonTableViewController.swift; sourceTree = "<group>"; };
+		C13738ED1C5F1FFE00CC1814 /* ArtistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTableViewController.swift; sourceTree = "<group>"; };
+		C13738EE1C5F1FFE00CC1814 /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
+		C13738EF1C5F1FFE00CC1814 /* GenreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreTableViewController.swift; sourceTree = "<group>"; };
+		C13738F01C5F1FFE00CC1814 /* AlbumDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsTableViewController.swift; sourceTree = "<group>"; };
+		C13738F11C5F1FFE00CC1814 /* DiscoveryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryTableViewController.swift; sourceTree = "<group>"; };
+		C13738FC1C5F200900CC1814 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
+		C13738FD1C5F200900CC1814 /* AddonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddonTableViewCell.swift; sourceTree = "<group>"; };
+		C13738FE1C5F200900CC1814 /* ArtistsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsTableViewCell.swift; sourceTree = "<group>"; };
+		C13738FF1C5F200900CC1814 /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
+		C13739001C5F200900CC1814 /* GenreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreTableViewCell.swift; sourceTree = "<group>"; };
+		C13739011C5F200900CC1814 /* AlbumDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		C13739021C5F200900CC1814 /* DiscoveryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryTableViewCell.swift; sourceTree = "<group>"; };
+		C13739141C5F209A00CC1814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C13739161C5F20FE00CC1814 /* KodiRemote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KodiRemote-Bridging-Header.h"; sourceTree = "<group>"; };
+		C13739171C5F21B900CC1814 /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		C13739181C5F21B900CC1814 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		C13739191C5F21B900CC1814 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		C137391D1C5F29D100CC1814 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		C137391E1C5F29D100CC1814 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C13738C71C5F1E2000CC1814 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C13738C11C5F1E2000CC1814 = {
+			isa = PBXGroup;
+			children = (
+				C13738CC1C5F1E2000CC1814 /* KodiRemote */,
+				C13738CB1C5F1E2000CC1814 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C13738CB1C5F1E2000CC1814 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C13738CA1C5F1E2000CC1814 /* KodiRemote.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C13738CC1C5F1E2000CC1814 /* KodiRemote */ = {
+			isa = PBXGroup;
+			children = (
+				C13738E71C5F1FF000CC1814 /* Controllers */,
+				C13738E61C5F1FA300CC1814 /* TableCells */,
+				C13738DF1C5F1F2F00CC1814 /* utils */,
+				C13738CD1C5F1E2000CC1814 /* AppDelegate.swift */,
+				C13738CF1C5F1E2000CC1814 /* ViewController.swift */,
+				C13738D41C5F1E2000CC1814 /* Assets.xcassets */,
+				C13739131C5F209A00CC1814 /* Main.storyboard */,
+				C13738D61C5F1E2000CC1814 /* LaunchScreen.storyboard */,
+				C13738D91C5F1E2000CC1814 /* Info.plist */,
+				C137391D1C5F29D100CC1814 /* SWRevealViewController.h */,
+				C137391E1C5F29D100CC1814 /* SWRevealViewController.m */,
+				C13739171C5F21B900CC1814 /* BaseTabBarController.swift */,
+				C13739181C5F21B900CC1814 /* BaseTableViewController.swift */,
+				C13739191C5F21B900CC1814 /* NavigationBar.swift */,
+				C13739161C5F20FE00CC1814 /* KodiRemote-Bridging-Header.h */,
+			);
+			path = KodiRemote;
+			sourceTree = "<group>";
+		};
+		C13738DF1C5F1F2F00CC1814 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				C13738E01C5F1F7000CC1814 /* RemoteCalls.swift */,
+				C13738E11C5F1F7000CC1814 /* Globals.swift */,
+				C13738E21C5F1F7000CC1814 /* Utils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		C13738E61C5F1FA300CC1814 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				C13738FC1C5F200900CC1814 /* MoviesTableViewCell.swift */,
+				C13738FD1C5F200900CC1814 /* AddonTableViewCell.swift */,
+				C13738FE1C5F200900CC1814 /* ArtistsTableViewCell.swift */,
+				C13738FF1C5F200900CC1814 /* AlbumsTableViewCell.swift */,
+				C13739001C5F200900CC1814 /* GenreTableViewCell.swift */,
+				C13739011C5F200900CC1814 /* AlbumDetailsTableViewCell.swift */,
+				C13739021C5F200900CC1814 /* DiscoveryTableViewCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		C13738E71C5F1FF000CC1814 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C13738E81C5F1FFE00CC1814 /* MoviesTableViewController.swift */,
+				C13738E91C5F1FFE00CC1814 /* RemoteController.swift */,
+				C13738EA1C5F1FFE00CC1814 /* TvShowsController.swift */,
+				C13738EB1C5F1FFE00CC1814 /* FilesController.swift */,
+				C13738EC1C5F1FFE00CC1814 /* AddonTableViewController.swift */,
+				C13738ED1C5F1FFE00CC1814 /* ArtistTableViewController.swift */,
+				C13738EE1C5F1FFE00CC1814 /* AlbumsTableViewController.swift */,
+				C13738EF1C5F1FFE00CC1814 /* GenreTableViewController.swift */,
+				C13738F01C5F1FFE00CC1814 /* AlbumDetailsTableViewController.swift */,
+				C13738F11C5F1FFE00CC1814 /* DiscoveryTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C13738C91C5F1E2000CC1814 /* KodiRemote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C13738DC1C5F1E2000CC1814 /* Build configuration list for PBXNativeTarget "KodiRemote" */;
+			buildPhases = (
+				C13738C61C5F1E2000CC1814 /* Sources */,
+				C13738C71C5F1E2000CC1814 /* Frameworks */,
+				C13738C81C5F1E2000CC1814 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KodiRemote;
+			productName = KodiRemote;
+			productReference = C13738CA1C5F1E2000CC1814 /* KodiRemote.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C13738C21C5F1E2000CC1814 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Quixom Technology";
+				TargetAttributes = {
+					C13738C91C5F1E2000CC1814 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = C13738C51C5F1E2000CC1814 /* Build configuration list for PBXProject "KodiRemote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C13738C11C5F1E2000CC1814;
+			productRefGroup = C13738CB1C5F1E2000CC1814 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C13738C91C5F1E2000CC1814 /* KodiRemote */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C13738C81C5F1E2000CC1814 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13739151C5F209A00CC1814 /* Main.storyboard in Resources */,
+				C13738D81C5F1E2000CC1814 /* LaunchScreen.storyboard in Resources */,
+				C13738D51C5F1E2000CC1814 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C13738C61C5F1E2000CC1814 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13739091C5F200900CC1814 /* DiscoveryTableViewCell.swift in Sources */,
+				C13738FA1C5F1FFE00CC1814 /* AlbumDetailsTableViewController.swift in Sources */,
+				C13738F21C5F1FFE00CC1814 /* MoviesTableViewController.swift in Sources */,
+				C13738F81C5F1FFE00CC1814 /* AlbumsTableViewController.swift in Sources */,
+				C13739041C5F200900CC1814 /* AddonTableViewCell.swift in Sources */,
+				C137391C1C5F21B900CC1814 /* NavigationBar.swift in Sources */,
+				C13738E51C5F1F7000CC1814 /* Utils.swift in Sources */,
+				C13738E41C5F1F7000CC1814 /* Globals.swift in Sources */,
+				C13739061C5F200900CC1814 /* AlbumsTableViewCell.swift in Sources */,
+				C13739071C5F200900CC1814 /* GenreTableViewCell.swift in Sources */,
+				C13738D01C5F1E2000CC1814 /* ViewController.swift in Sources */,
+				C13738FB1C5F1FFE00CC1814 /* DiscoveryTableViewController.swift in Sources */,
+				C13738F91C5F1FFE00CC1814 /* GenreTableViewController.swift in Sources */,
+				C137391F1C5F29D100CC1814 /* SWRevealViewController.m in Sources */,
+				C13738F41C5F1FFE00CC1814 /* TvShowsController.swift in Sources */,
+				C13738E31C5F1F7000CC1814 /* RemoteCalls.swift in Sources */,
+				C13739031C5F200900CC1814 /* MoviesTableViewCell.swift in Sources */,
+				C13738F51C5F1FFE00CC1814 /* FilesController.swift in Sources */,
+				C13738F31C5F1FFE00CC1814 /* RemoteController.swift in Sources */,
+				C137391A1C5F21B900CC1814 /* BaseTabBarController.swift in Sources */,
+				C137391B1C5F21B900CC1814 /* BaseTableViewController.swift in Sources */,
+				C13739051C5F200900CC1814 /* ArtistsTableViewCell.swift in Sources */,
+				C13738F61C5F1FFE00CC1814 /* AddonTableViewController.swift in Sources */,
+				C13738F71C5F1FFE00CC1814 /* ArtistTableViewController.swift in Sources */,
+				C13739081C5F200900CC1814 /* AlbumDetailsTableViewCell.swift in Sources */,
+				C13738CE1C5F1E2000CC1814 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C13738D61C5F1E2000CC1814 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C13738D71C5F1E2000CC1814 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C13739131C5F209A00CC1814 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C13739141C5F209A00CC1814 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C13738DA1C5F1E2000CC1814 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C13738DB1C5F1E2000CC1814 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C13738DD1C5F1E2000CC1814 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = KodiRemote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quixom.KodiRemote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KodiRemote/KodiRemote-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C13738DE1C5F1E2000CC1814 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = KodiRemote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quixom.KodiRemote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KodiRemote/KodiRemote-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C13738C51C5F1E2000CC1814 /* Build configuration list for PBXProject "KodiRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C13738DA1C5F1E2000CC1814 /* Debug */,
+				C13738DB1C5F1E2000CC1814 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C13738DC1C5F1E2000CC1814 /* Build configuration list for PBXNativeTarget "KodiRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C13738DD1C5F1E2000CC1814 /* Debug */,
+				C13738DE1C5F1E2000CC1814 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C13738C21C5F1E2000CC1814 /* Project object */;
+}
