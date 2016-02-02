@@ -21,6 +21,11 @@ class RemoteController: ViewController {
     @IBOutlet var pause: UIButton!
     @IBOutlet var forward: UIButton!
     var imageCache = [String:UIImage]()
+    
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var totalTimeLabel: UILabel!
+    @IBOutlet var progressBar: UIProgressView!
+    
 	
 	var rc: RemoteCalls!
 	
@@ -63,6 +68,7 @@ class RemoteController: ViewController {
                 dispatch_async(dispatch_get_main_queue(), {
 
                     let response = response as? NSDictionary
+
                     if response!["speed"] as! Int == 0 {
                         self.play.hidden = false
                         self.pause.hidden = true
@@ -70,6 +76,11 @@ class RemoteController: ViewController {
                         self.play.hidden = true
                         self.pause.hidden = false
                     }
+                    
+                    self.timeLabel.text = self.toMinutes(response!["time"] as! NSDictionary)
+                    self.totalTimeLabel.text = self.toMinutes(response!["totaltime"] as! NSDictionary)
+                    
+                    self.progressBar.progress = (response!["percentage"] as! Float) / 100
                 })
                 
                 self.rc.jsonRpcCall("Player.GetItem", params: "{\"playerid\":\(playerId),\"properties\":[\"title\",\"artist\",\"thumbnail\", \"album\",\"year\"]}"){(response: AnyObject?) in
@@ -123,6 +134,30 @@ class RemoteController: ViewController {
                 imageURL.image = image
             }
         }
+    }
+    
+    func toMinutes(temps: NSDictionary ) -> String {
+        var seconds = String(temps["seconds"] as! Int)
+        var minutes = String(temps["minutes"] as! Int)
+        var hours = String(temps["hours"] as! Int)
+        
+        if (Int(seconds) < 10) {
+            seconds = "0" + seconds
+        }
+        if (Int(minutes) < 10) {
+            minutes = "0" + minutes
+        }
+        if (Int(hours) < 10) {
+            hours = "0" + hours
+        }
+        
+        var time = minutes + ":" + seconds
+        
+        if Int(hours) != 0 {
+            time = hours + ":" + minutes + ":" + seconds
+        }
+        
+        return time
     }
     
     @IBAction func backwardButton(sender: AnyObject) {
