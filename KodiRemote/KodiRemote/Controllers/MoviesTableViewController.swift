@@ -25,8 +25,8 @@ class MoviesTableViewController: BaseTableViewController {
  
         // TODO: use shared preference to get ip address and port.
         self.rc = RemoteCalls(ipaddress: global_ipaddress, port: global_port)
-        self.rc.jsonRpcCall("VideoLibrary.GetMovies", params: "{\"properties\":[\"genre\",\"year\",\"thumbnail\",\"runtime\", \"file\"]}"){(response: NSDictionary?) in
-            self.generateResponse(response!)
+        self.rc.jsonRpcCall("VideoLibrary.GetMovies", params: "{\"properties\":[\"genre\",\"year\",\"thumbnail\",\"runtime\", \"file\"]}"){(response: AnyObject?) in
+            self.generateResponse(response as! NSDictionary)
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView.reloadData()
@@ -71,7 +71,7 @@ class MoviesTableViewController: BaseTableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.rc.jsonRpcCall("Player.Open", params: "{\"item\":{\"file\":\"\(self.movieFile[indexPath.row])\"}}"){ (response: NSDictionary?) in
+        self.rc.jsonRpcCall("Player.Open", params: "{\"item\":{\"file\":\"\(self.movieFile[indexPath.row])\"}}"){ (response: AnyObject?) in
         }
     }
     

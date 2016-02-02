@@ -19,7 +19,7 @@ class RemoteCalls: NSObject {
 		self.port = port
 	}
 	
-    func jsonRpcCall(method: String, params: String = "{}", callback: (NSDictionary?) -> Void){
+    func jsonRpcCall(method: String, params: String = "{}", callback: (AnyObject?) -> Void){
 		
 		let base_url = "http://" + self.ipaddress + ":" + self.port + "/jsonrpc"
 		let urlComponents = NSURLComponents(string: base_url)!
@@ -40,7 +40,8 @@ class RemoteCalls: NSObject {
                 let jsonDict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0)) as? NSDictionary
                 if let jsonDict = jsonDict {
                     // work with dictionary here
-                    callback(jsonDict["result"] as? NSDictionary)
+                    let jsonData = jsonDict["result"]
+                    callback(jsonData)
                 } else {
                     // more error handling
                 }

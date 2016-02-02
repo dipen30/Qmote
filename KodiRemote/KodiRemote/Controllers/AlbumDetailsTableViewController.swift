@@ -26,8 +26,8 @@ class AlbumDetailsTableViewController: UITableViewController {
         self.navigationItem.title = albumName
         
         rc = RemoteCalls(ipaddress: global_ipaddress, port: global_port)
-        rc.jsonRpcCall("AudioLibrary.GetSongs", params: "{\"filter\":{\"albumid\":\(albumId)},\"properties\":[\"thumbnail\",\"genre\",\"artist\"]}"){ (response: NSDictionary?) in
-            self.generateResponse(response!)
+        rc.jsonRpcCall("AudioLibrary.GetSongs", params: "{\"filter\":{\"albumid\":\(albumId)},\"properties\":[\"thumbnail\",\"genre\",\"artist\"]}"){ (response: AnyObject?) in
+            self.generateResponse(response as! NSDictionary)
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView.reloadData()
@@ -83,9 +83,9 @@ class AlbumDetailsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        self.rc.jsonRpcCall("Playlist.clear", params: "{\"playlistid\":0}"){ (response: NSDictionary?) in
-            self.rc.jsonRpcCall("Playlist.Add", params: "{\"playlistid\":0, \"item\":{\"albumid\":\(self.albumId)}}"){ (response: NSDictionary?) in
-                self.rc.jsonRpcCall("Player.Open", params: "{\"item\":{\"playlistid\":0, \"position\": \(indexPath.row)}}"){ (response: NSDictionary?) in
+        self.rc.jsonRpcCall("Playlist.clear", params: "{\"playlistid\":0}"){ (response: AnyObject?) in
+            self.rc.jsonRpcCall("Playlist.Add", params: "{\"playlistid\":0, \"item\":{\"albumid\":\(self.albumId)}}"){ (response: AnyObject?) in
+                self.rc.jsonRpcCall("Player.Open", params: "{\"item\":{\"playlistid\":0, \"position\": \(indexPath.row)}}"){ (response: AnyObject?) in
                 }
             }
         }

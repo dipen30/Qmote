@@ -40,8 +40,8 @@ class AlbumsTableViewController: UITableViewController {
         }
         
         rc = RemoteCalls(ipaddress: global_ipaddress, port: global_port)
-        rc.jsonRpcCall("AudioLibrary.GetAlbums", params: "{\(params)\"properties\":[\"thumbnail\",\"genre\",\"artist\"]}"){ (response: NSDictionary?) in
-            self.generateResponse(response!)
+        rc.jsonRpcCall("AudioLibrary.GetAlbums", params: "{\(params)\"properties\":[\"thumbnail\",\"genre\",\"artist\"]}"){ (response: AnyObject?) in
+            self.generateResponse(response as! NSDictionary)
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView.reloadData()

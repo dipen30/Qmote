@@ -21,8 +21,8 @@ class GenreTableViewController: UITableViewController {
         super.viewDidLoad()
         
         rc = RemoteCalls(ipaddress: global_ipaddress, port: global_port)
-        rc.jsonRpcCall("AudioLibrary.GetGenres", params: "{\"properties\":[]}"){ (response: NSDictionary?) in
-            self.generateResponse(response!)
+        rc.jsonRpcCall("AudioLibrary.GetGenres", params: "{\"properties\":[]}"){ (response: AnyObject?) in
+            self.generateResponse(response as! NSDictionary)
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView.reloadData()
