@@ -108,7 +108,10 @@ class RemoteController: ViewController {
             }
             
             if key as! String == "artist" {
-                self.otherDetails.text = value[0] as? String
+                self.otherDetails.text = ""
+                if value.count != 0 {
+                    self.otherDetails.text = value[0] as? String
+                }
             }
             
             if key as! String == "thumbnail" {
