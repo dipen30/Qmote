@@ -10,10 +10,6 @@ import Foundation
 
 
 class RemoteController: ViewController {
-	
-	@IBOutlet var ipTextbox: UITextField!
-	@IBOutlet var portTextBox: UITextField!
-	@IBOutlet var errorLable: UILabel!
     
     @IBOutlet var itemName: UILabel!
     @IBOutlet var otherDetails: UILabel!
@@ -24,6 +20,7 @@ class RemoteController: ViewController {
     @IBOutlet var play: UIButton!
     @IBOutlet var pause: UIButton!
     @IBOutlet var forward: UIButton!
+    var imageCache = [String:UIImage]()
 	
 	var rc: RemoteCalls!
 	
@@ -108,7 +105,11 @@ class RemoteController: ViewController {
                 self.activePlayerImage.contentMode = .ScaleAspectFit
                 
                 let url = NSURL(string: "http://" + global_ipaddress + ":" + global_port + "/image/" + (value as! String).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!)
-                self.downloadImage(url!, imageURL: self.activePlayerImage)
+                if let img = self.imageCache[(url?.absoluteString)!]{
+                    self.activePlayerImage.image = img
+                }else{
+                    self.downloadImage(url!, imageURL: self.activePlayerImage)
+                }
             }
         }
     }
@@ -118,8 +119,34 @@ class RemoteController: ViewController {
             dispatch_async(dispatch_get_main_queue()) { () -> Void in
                 guard let data = data where error == nil else { return }
                 let image = UIImage(data: data)
+                self.imageCache[url.absoluteString] = image
                 imageURL.image = image
             }
+        }
+    }
+    
+    @IBAction func backwardButton(sender: AnyObject) {
+        rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"skipprevious\"}"){(response: AnyObject?) in
+        }
+    }
+    
+    @IBAction func stopButton(sender: AnyObject) {
+        rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"stop\"}"){(response: AnyObject?) in
+        }
+    }
+    
+    @IBAction func playButton(sender: AnyObject) {
+        rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"play\"}"){(response: AnyObject?) in
+        }
+    }
+    
+    @IBAction func pauseButton(sender: AnyObject) {
+        rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"pause\"}"){(response: AnyObject?) in
+        }
+    }
+    
+    @IBAction func forwardButton(sender: AnyObject) {
+        rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"skipnext\"}"){(response: AnyObject?) in
         }
     }
 		

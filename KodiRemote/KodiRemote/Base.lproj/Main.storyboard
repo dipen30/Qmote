@@ -470,53 +470,58 @@
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffX-Ty-4YS">
                                 <rect key="frame" x="0.0" y="72" width="320" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hQ-rz-bvv">
-                                        <rect key="frame" x="110" y="14" width="210" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kc9-SW-ENI">
                                         <rect key="frame" x="110" y="66" width="20" height="20"/>
                                         <state key="normal" title="StepBack" image="step_back"/>
+                                        <connections>
+                                            <action selector="backwardButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="uvJ-c2-Y9T"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-Yt-jTi">
                                         <rect key="frame" x="169" y="66" width="20" height="20"/>
                                         <state key="normal" title="Stop" image="stop"/>
+                                        <connections>
+                                            <action selector="stopButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="7b4-0d-Rhl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkS-7s-a8m">
                                         <rect key="frame" x="226" y="67" width="20" height="20"/>
                                         <state key="normal" title="Play" image="play"/>
+                                        <connections>
+                                            <action selector="playButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="u2B-nK-3kh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6G-N9-HKi">
                                         <rect key="frame" x="226" y="67" width="20" height="20"/>
                                         <state key="normal" title="Pause" image="pause"/>
+                                        <connections>
+                                            <action selector="pauseButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="mOh-qU-jM6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcb-RH-zkN">
                                         <rect key="frame" x="292" y="67" width="20" height="20"/>
                                         <state key="normal" title="Forward" image="step_forward"/>
+                                        <connections>
+                                            <action selector="forwardButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="oh7-59-Pnu"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Other Details" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gi-wg-qGh">
-                                        <rect key="frame" x="110" y="37" width="210" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="SuS-II-8Ol"/>
-                                        </constraints>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7e-kF-qWE">
+                                        <rect key="frame" x="0.0" y="8" width="102" height="92"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Other Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faq-c0-eel">
+                                        <rect key="frame" x="110" y="31" width="210" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7e-kF-qWE">
-                                        <rect key="frame" x="0.0" y="8" width="102" height="92"/>
-                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONY-Re-45R">
+                                        <rect key="frame" x="110" y="8" width="210" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="4Gi-wg-qGh" firstAttribute="leading" secondItem="0hQ-rz-bvv" secondAttribute="leading" id="1Ca-1B-Hot"/>
-                                    <constraint firstItem="4Gi-wg-qGh" firstAttribute="width" secondItem="ffX-Ty-4YS" secondAttribute="width" constant="-110" id="StP-xV-8dW"/>
-                                    <constraint firstItem="0hQ-rz-bvv" firstAttribute="top" secondItem="ffX-Ty-4YS" secondAttribute="top" constant="14" id="qPY-Ro-2QO"/>
-                                    <constraint firstAttribute="trailing" secondItem="0hQ-rz-bvv" secondAttribute="trailing" id="vUL-L4-Kiu"/>
-                                    <constraint firstItem="4Gi-wg-qGh" firstAttribute="top" secondItem="0hQ-rz-bvv" secondAttribute="bottom" constant="2" id="y9Z-Oo-p4Q"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -538,9 +543,9 @@
                         <outlet property="activePlayerImage" destination="G7e-kF-qWE" id="2Tg-ev-6XO"/>
                         <outlet property="backward" destination="kc9-SW-ENI" id="RNc-OT-Jkc"/>
                         <outlet property="forward" destination="Mcb-RH-zkN" id="VqK-2U-MeN"/>
-                        <outlet property="itemName" destination="0hQ-rz-bvv" id="FDF-eK-jLt"/>
+                        <outlet property="itemName" destination="ONY-Re-45R" id="lHs-VD-pdX"/>
                         <outlet property="navbar" destination="Qff-QY-xE8" id="OGt-m8-Dbf"/>
-                        <outlet property="otherDetails" destination="4Gi-wg-qGh" id="eEG-8g-tF7"/>
+                        <outlet property="otherDetails" destination="faq-c0-eel" id="JTE-Co-O5y"/>
                         <outlet property="pause" destination="x6G-N9-HKi" id="DGb-sz-y0l"/>
                         <outlet property="play" destination="VkS-7s-a8m" id="20J-FD-pvn"/>
                         <outlet property="stop" destination="9BZ-Yt-jTi" id="nri-oc-QzH"/>
