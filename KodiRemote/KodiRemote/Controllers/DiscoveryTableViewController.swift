@@ -75,7 +75,9 @@ class DiscoveryTableViewController: BaseTableViewController, NSNetServiceDelegat
                 }
                 
                 if key as! String == "addresses" {
-                    self.serviceIps.append(value[0] as! String)
+                    if value.count > 0 {
+                        self.serviceIps.append(value[0] as! String)
+                    }
                 }
             }
         }

@@ -15,11 +15,8 @@ class RemoteController: ViewController {
     @IBOutlet var otherDetails: UILabel!
     @IBOutlet var activePlayerImage: UIImageView!
     
-    @IBOutlet var backward: UIButton!
-    @IBOutlet var stop: UIButton!
     @IBOutlet var play: UIButton!
     @IBOutlet var pause: UIButton!
-    @IBOutlet var forward: UIButton!
     var imageCache = [String:UIImage]()
     
     @IBOutlet var timeLabel: UILabel!
@@ -163,10 +160,16 @@ class RemoteController: ViewController {
         return time
     }
     
-    @IBAction func backwardButton(sender: AnyObject) {
+    @IBAction func previousButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"skipprevious\"}"){(response: AnyObject?) in
         }
     }
+    
+    @IBAction func fastRewindButton(sender: AnyObject) {
+        rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"stepback\"}"){(response: AnyObject?) in
+        }
+    }
+    
     
     @IBAction func stopButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"stop\"}"){(response: AnyObject?) in
@@ -183,7 +186,12 @@ class RemoteController: ViewController {
         }
     }
     
-    @IBAction func forwardButton(sender: AnyObject) {
+    @IBAction func fastForwardButton(sender: AnyObject) {
+        rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"stepforward\"}"){(response: AnyObject?) in
+        }
+    }
+    
+    @IBAction func nextButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"skipnext\"}"){(response: AnyObject?) in
         }
     }

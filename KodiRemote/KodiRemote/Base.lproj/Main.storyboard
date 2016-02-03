@@ -387,13 +387,6 @@
                                             <action selector="leftButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="L5h-Tp-Bw8"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-1m-quL">
-                                        <rect key="frame" x="185" y="99" width="50" height="55"/>
-                                        <state key="normal" title="Right" image="Right"/>
-                                        <connections>
-                                            <action selector="rightButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="3VW-lp-vsw"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oez-tI-IBt">
                                         <rect key="frame" x="20" y="265" width="50" height="55"/>
                                         <state key="normal" title="Home" image="Home"/>
@@ -464,6 +457,13 @@
                                             <action selector="okButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="ocQ-bf-0W4"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-1m-quL">
+                                        <rect key="frame" x="185" y="99" width="50" height="55"/>
+                                        <state key="normal" title="Right" image="Right"/>
+                                        <connections>
+                                            <action selector="rightButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="3VW-lp-vsw"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -472,37 +472,37 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kc9-SW-ENI">
                                         <rect key="frame" x="110" y="66" width="20" height="20"/>
-                                        <state key="normal" title="StepBack" image="step_back"/>
+                                        <state key="normal" title="Previous" image="previous"/>
                                         <connections>
-                                            <action selector="backwardButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="uvJ-c2-Y9T"/>
+                                            <action selector="previousButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="pPd-sm-RTn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-Yt-jTi">
-                                        <rect key="frame" x="169" y="66" width="20" height="20"/>
+                                        <rect key="frame" x="181" y="66" width="20" height="20"/>
                                         <state key="normal" title="Stop" image="stop"/>
                                         <connections>
                                             <action selector="stopButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="7b4-0d-Rhl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkS-7s-a8m">
-                                        <rect key="frame" x="226" y="67" width="20" height="20"/>
+                                        <rect key="frame" x="217" y="66" width="20" height="20"/>
                                         <state key="normal" title="Play" image="play"/>
                                         <connections>
                                             <action selector="playButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="u2B-nK-3kh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6G-N9-HKi">
-                                        <rect key="frame" x="226" y="67" width="20" height="20"/>
+                                        <rect key="frame" x="217" y="66" width="20" height="20"/>
                                         <state key="normal" title="Pause" image="pause"/>
                                         <connections>
                                             <action selector="pauseButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="mOh-qU-jM6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcb-RH-zkN">
-                                        <rect key="frame" x="292" y="67" width="20" height="20"/>
-                                        <state key="normal" title="Forward" image="step_forward"/>
+                                        <rect key="frame" x="292" y="66" width="20" height="20"/>
+                                        <state key="normal" title="Forward" image="next"/>
                                         <connections>
-                                            <action selector="forwardButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="oh7-59-Pnu"/>
+                                            <action selector="nextButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="dd5-nL-jZz"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7e-kF-qWE">
@@ -535,6 +535,40 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLf-Wz-CH9">
+                                        <rect key="frame" x="146" y="66" width="20" height="20"/>
+                                        <state key="normal" title="rewind" image="fast-rewind"/>
+                                        <connections>
+                                            <action selector="fastRewindButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="PDm-bl-Shy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bf-l8-sFG">
+                                        <rect key="frame" x="255" y="66" width="20" height="20"/>
+                                        <state key="normal" title="forward" image="fast-forward"/>
+                                        <connections>
+                                            <action selector="fastForwardButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="jam-EI-9ir"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a89-LM-wOU">
+                                        <rect key="frame" x="9" y="134" width="20" height="20"/>
+                                        <state key="normal" title="Volume Down" image="volume-down"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2x-Js-Ojc">
+                                        <rect key="frame" x="146" y="134" width="20" height="20"/>
+                                        <state key="normal" title="Volume Up" image="volume-up"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0N-t0-W70">
+                                        <rect key="frame" x="217" y="134" width="20" height="20"/>
+                                        <state key="normal" title="Repeate" image="Repeat"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEY-Ff-3MI">
+                                        <rect key="frame" x="292" y="134" width="20" height="20"/>
+                                        <state key="normal" title="shuffle" image="shuffle"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRq-13-Lq0">
+                                        <rect key="frame" x="82" y="134" width="20" height="20"/>
+                                        <state key="normal" title="Mute" image="volume-mute"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -562,15 +596,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activePlayerImage" destination="G7e-kF-qWE" id="2Tg-ev-6XO"/>
-                        <outlet property="backward" destination="kc9-SW-ENI" id="RNc-OT-Jkc"/>
-                        <outlet property="forward" destination="Mcb-RH-zkN" id="VqK-2U-MeN"/>
                         <outlet property="itemName" destination="ONY-Re-45R" id="lHs-VD-pdX"/>
                         <outlet property="navbar" destination="Qff-QY-xE8" id="OGt-m8-Dbf"/>
                         <outlet property="otherDetails" destination="faq-c0-eel" id="JTE-Co-O5y"/>
                         <outlet property="pause" destination="x6G-N9-HKi" id="DGb-sz-y0l"/>
                         <outlet property="play" destination="VkS-7s-a8m" id="20J-FD-pvn"/>
                         <outlet property="progressBar" destination="RQO-Kk-w3R" id="vfz-S3-oHr"/>
-                        <outlet property="stop" destination="9BZ-Yt-jTi" id="nri-oc-QzH"/>
                         <outlet property="timeLabel" destination="bCp-gY-71f" id="g9n-9s-xh7"/>
                         <outlet property="totalTimeLabel" destination="CNI-e2-CTz" id="zN2-3M-YfJ"/>
                     </connections>
@@ -1035,19 +1066,26 @@
         <image name="Bottom" width="128" height="128"/>
         <image name="Home" width="128" height="128"/>
         <image name="Left" width="128" height="128"/>
+        <image name="Repeat" width="128" height="128"/>
         <image name="Right" width="128" height="128"/>
         <image name="Top" width="128" height="128"/>
         <image name="computer-devices" width="128" height="128"/>
+        <image name="fast-forward" width="128" height="85"/>
+        <image name="fast-rewind" width="128" height="85"/>
         <image name="movie" width="128" height="128"/>
         <image name="music" width="128" height="128"/>
         <image name="navicon" width="50" height="50"/>
+        <image name="next" width="128" height="128"/>
         <image name="pause" width="128" height="128"/>
         <image name="picture" width="128" height="128"/>
         <image name="play" width="128" height="128"/>
-        <image name="step_back" width="128" height="128"/>
-        <image name="step_forward" width="128" height="128"/>
+        <image name="previous" width="128" height="128"/>
+        <image name="shuffle" width="128" height="128"/>
         <image name="stop" width="128" height="128"/>
         <image name="video" width="128" height="128"/>
+        <image name="volume-down" width="128" height="128"/>
+        <image name="volume-mute" width="128" height="128"/>
+        <image name="volume-up" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LE8-bc-Aa8"/>
