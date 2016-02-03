@@ -75,18 +75,12 @@ class RemoteController: ViewController {
                     let response = response as? NSDictionary
                     self.shuffle = response!["shuffled"] as! Int
                     self.player_repeat = response!["repeat"] as! String
+
+                    let repeateImage = self.player_repeat == "off" ? "Repeat": "RepeatSelected"
+                    self.playerRepeat.imageView?.image = UIImage(named: repeateImage)
                     
-                    if self.player_repeat == "off" {
-                        self.playerRepeat.imageView?.image = UIImage(named: "Repeat")
-                    }else{
-                        self.playerRepeat.imageView?.image = UIImage(named: "RepeatSelected")
-                    }
-                    
-                    if self.shuffle == 1 {
-                        self.playerShuffle.imageView?.image = UIImage(named: "shuffleSelected")
-                    }else{
-                        self.playerShuffle.imageView?.image = UIImage(named: "shuffle")
-                    }
+                    let suffleImage = self.shuffle == 1 ? "shuffleSelected" : "shuffle"
+                    self.playerShuffle.imageView?.image = UIImage(named: suffleImage)
 
                     if response!["speed"] as! Int == 0 {
                         self.play.hidden = false
