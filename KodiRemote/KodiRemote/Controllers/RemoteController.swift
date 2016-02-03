@@ -22,6 +22,14 @@ class RemoteController: ViewController {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var totalTimeLabel: UILabel!
     @IBOutlet var progressBar: UIProgressView!
+    var playerId = 0
+    var player_repeat = "off"
+    var shuffle = 0
+    
+    
+    @IBOutlet var playerRepeat: UIButton!
+    @IBOutlet var playerShuffle: UIButton!
+    
     
 	
 	var rc: RemoteCalls!
@@ -58,13 +66,27 @@ class RemoteController: ViewController {
             })
             
             let response = response![0] as? NSDictionary
-            let playerId = response!["playerid"] as! Int
+            self.playerId = response!["playerid"] as! Int
             
-            self.rc.jsonRpcCall("Player.GetProperties", params: "{\"playerid\":\(playerId),\"properties\":[\"percentage\",\"time\",\"totaltime\", \"repeat\",\"shuffled\",\"speed\",\"subtitleenabled\"]}"){(response: AnyObject?) in
+            self.rc.jsonRpcCall("Player.GetProperties", params: "{\"playerid\":\(self.playerId),\"properties\":[\"percentage\",\"time\",\"totaltime\", \"repeat\",\"shuffled\",\"speed\",\"subtitleenabled\"]}"){(response: AnyObject?) in
 
                 dispatch_async(dispatch_get_main_queue(), {
 
                     let response = response as? NSDictionary
+                    self.shuffle = response!["shuffled"] as! Int
+                    self.player_repeat = response!["repeat"] as! String
+                    
+                    if self.player_repeat == "off" {
+                        self.playerRepeat.imageView?.image = UIImage(named: "Repeat")
+                    }else{
+                        self.playerRepeat.imageView?.image = UIImage(named: "RepeatSelected")
+                    }
+                    
+                    if self.shuffle == 1 {
+                        self.playerShuffle.imageView?.image = UIImage(named: "shuffleSelected")
+                    }else{
+                        self.playerShuffle.imageView?.image = UIImage(named: "shuffle")
+                    }
 
                     if response!["speed"] as! Int == 0 {
                         self.play.hidden = false
@@ -80,7 +102,7 @@ class RemoteController: ViewController {
                     self.progressBar.progress = (response!["percentage"] as! Float) / 100
                 })
                 
-                self.rc.jsonRpcCall("Player.GetItem", params: "{\"playerid\":\(playerId),\"properties\":[\"title\",\"artist\",\"thumbnail\", \"album\",\"year\"]}"){(response: AnyObject?) in
+                self.rc.jsonRpcCall("Player.GetItem", params: "{\"playerid\":\(self.playerId),\"properties\":[\"title\",\"artist\",\"thumbnail\", \"album\",\"year\"]}"){(response: AnyObject?) in
                     
                     dispatch_async(dispatch_get_main_queue(), {
                         let response = response as? NSDictionary
@@ -250,5 +272,31 @@ class RemoteController: ViewController {
         rc.jsonRpcCall("GUI.ActivateWindow", params: "{\"window\": \"pictures\"}"){(response: AnyObject?) in
         }
 	}
+    
+    @IBAction func volumeDownButton(sender: AnyObject) {
+        rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"volumedown\"}"){(response: AnyObject?) in
+        }
+    }
+    
+    @IBAction func muteButton(sender: AnyObject) {
+        rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"mute\"}"){(response: AnyObject?) in
+        }
+    }
 	
+    @IBAction func volumeUpButton(sender: AnyObject) {
+        rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"volumeup\"}"){(response: AnyObject?) in
+        }
+    }
+    
+    @IBAction func repeatButton(sender: AnyObject) {
+        let r = self.player_repeat == "off" ? "all" : "off"
+        rc.jsonRpcCall("Player.SetRepeat", params: "{\"playerid\":\(self.playerId), \"repeat\":\"\(r)\"}"){(response: AnyObject?) in
+        }
+    }
+    
+    @IBAction func shuffleButton(sender: AnyObject) {
+        let s = self.shuffle == 1 ? "false": "true"
+        rc.jsonRpcCall("Player.SetShuffle", params: "{\"playerid\":\(self.playerId), \"shuffle\":\(s)}"){(response: AnyObject?) in
+        }
+    }
 }

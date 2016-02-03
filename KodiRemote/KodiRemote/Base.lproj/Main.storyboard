@@ -552,22 +552,37 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a89-LM-wOU">
                                         <rect key="frame" x="9" y="134" width="20" height="20"/>
                                         <state key="normal" title="Volume Down" image="volume-down"/>
+                                        <connections>
+                                            <action selector="volumeDownButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="JvQ-8D-63P"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2x-Js-Ojc">
                                         <rect key="frame" x="146" y="134" width="20" height="20"/>
                                         <state key="normal" title="Volume Up" image="volume-up"/>
+                                        <connections>
+                                            <action selector="volumeUpButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="abe-PM-H49"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0N-t0-W70">
                                         <rect key="frame" x="217" y="134" width="20" height="20"/>
-                                        <state key="normal" title="Repeate" image="Repeat"/>
+                                        <state key="normal" title="Repeat" image="Repeat"/>
+                                        <connections>
+                                            <action selector="repeatButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="00m-n5-QLS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEY-Ff-3MI">
                                         <rect key="frame" x="292" y="134" width="20" height="20"/>
                                         <state key="normal" title="shuffle" image="shuffle"/>
+                                        <connections>
+                                            <action selector="shuffleButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="sf6-0p-QCw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRq-13-Lq0">
                                         <rect key="frame" x="82" y="134" width="20" height="20"/>
                                         <state key="normal" title="Mute" image="volume-mute"/>
+                                        <connections>
+                                            <action selector="muteButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="AMM-AV-CXG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -601,6 +616,8 @@
                         <outlet property="otherDetails" destination="faq-c0-eel" id="JTE-Co-O5y"/>
                         <outlet property="pause" destination="x6G-N9-HKi" id="DGb-sz-y0l"/>
                         <outlet property="play" destination="VkS-7s-a8m" id="20J-FD-pvn"/>
+                        <outlet property="playerRepeat" destination="p0N-t0-W70" id="v86-2J-6em"/>
+                        <outlet property="playerShuffle" destination="SEY-Ff-3MI" id="tTO-sA-wVh"/>
                         <outlet property="progressBar" destination="RQO-Kk-w3R" id="vfz-S3-oHr"/>
                         <outlet property="timeLabel" destination="bCp-gY-71f" id="g9n-9s-xh7"/>
                         <outlet property="totalTimeLabel" destination="CNI-e2-CTz" id="zN2-3M-YfJ"/>
