@@ -508,13 +508,13 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7e-kF-qWE">
                                         <rect key="frame" x="0.0" y="8" width="102" height="92"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Other Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faq-c0-eel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Other Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faq-c0-eel">
                                         <rect key="frame" x="110" y="31" width="210" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONY-Re-45R">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONY-Re-45R">
                                         <rect key="frame" x="110" y="8" width="210" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -591,6 +591,8 @@
                                     <constraint firstItem="RQO-Kk-w3R" firstAttribute="leading" secondItem="ffX-Ty-4YS" secondAttribute="leading" constant="67" id="DeJ-ds-Vbh"/>
                                     <constraint firstItem="bCp-gY-71f" firstAttribute="leading" secondItem="ffX-Ty-4YS" secondAttribute="leading" constant="9" id="GTB-Ao-css"/>
                                     <constraint firstAttribute="trailing" secondItem="RQO-Kk-w3R" secondAttribute="trailing" constant="74" id="JBk-Dw-afe"/>
+                                    <constraint firstItem="ONY-Re-45R" firstAttribute="width" secondItem="ffX-Ty-4YS" secondAttribute="width" constant="-110" id="dG3-6g-1Ai"/>
+                                    <constraint firstItem="faq-c0-eel" firstAttribute="width" secondItem="ffX-Ty-4YS" secondAttribute="width" id="fgy-gS-Sn0"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1005,7 +1007,7 @@
         <scene sceneID="dzr-Uq-cRz">
             <objects>
                 <tableViewController title="Addon Table" id="S2h-oy-xKe" customClass="AddonTableViewController" customModule="KodiRemote" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y0N-Qz-htY">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y0N-Qz-htY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1105,7 +1107,7 @@
         <image name="volume-up" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LE8-bc-Aa8"/>
         <segue reference="CSe-xd-cqt"/>
+        <segue reference="LE8-bc-Aa8"/>
     </inferredMetricsTieBreakers>
 </document>
