@@ -15,6 +15,7 @@ class RemoteController: ViewController {
     @IBOutlet var otherDetails: UILabel!
     @IBOutlet var activePlayerImage: UIImageView!
     
+    @IBOutlet var nothingPlaying: UILabel!
     @IBOutlet var play: UIButton!
     @IBOutlet var pause: UIButton!
     var imageCache = [String:UIImage]()
@@ -56,6 +57,7 @@ class RemoteController: ViewController {
             if response!.count == 0 {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.view.viewWithTag(2)?.hidden = true
+                    self.nothingPlaying.hidden = false
                 })
                 
                 return
@@ -63,6 +65,7 @@ class RemoteController: ViewController {
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.view.viewWithTag(2)?.hidden = false
+                self.nothingPlaying.hidden = true
             })
             
             let response = response![0] as? NSDictionary

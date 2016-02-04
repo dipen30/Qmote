@@ -377,96 +377,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZr-jk-RLS">
-                                <rect key="frame" x="0.0" y="248" width="320" height="320"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cus-Yr-931">
-                                        <rect key="frame" x="85" y="99" width="50" height="55"/>
-                                        <state key="normal" title="Left" image="Left"/>
-                                        <connections>
-                                            <action selector="leftButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="L5h-Tp-Bw8"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oez-tI-IBt">
-                                        <rect key="frame" x="20" y="265" width="50" height="55"/>
-                                        <state key="normal" title="Home" image="Home"/>
-                                        <connections>
-                                            <action selector="homeButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="cbE-kw-can"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOu-es-UnX">
-                                        <rect key="frame" x="222" y="207" width="50" height="55"/>
-                                        <state key="normal" title="Back" image="Back"/>
-                                        <connections>
-                                            <action selector="backButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="Tqh-mV-wIe"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPE-JC-81S">
-                                        <rect key="frame" x="67" y="212" width="40" height="45"/>
-                                        <state key="normal" title="Home" image="Home"/>
-                                        <connections>
-                                            <action selector="homeButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="WLD-OT-wag"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAB-Kl-9Dx">
-                                        <rect key="frame" x="158" y="270" width="40" height="45"/>
-                                        <state key="normal" title="Movies" image="movie"/>
-                                        <connections>
-                                            <action selector="moviesButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="rKm-LC-XhA"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGx-ei-LVM">
-                                        <rect key="frame" x="272" y="270" width="40" height="45"/>
-                                        <state key="normal" title="Pictures" image="picture"/>
-                                        <connections>
-                                            <action selector="pictureButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="4dD-nm-zOP"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqS-ha-VAM">
-                                        <rect key="frame" x="92" y="270" width="40" height="45"/>
-                                        <state key="normal" title="Videos" image="video"/>
-                                        <connections>
-                                            <action selector="videoButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="VRx-jd-a5A"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-8P-1Mo">
-                                        <rect key="frame" x="135" y="153" width="50" height="55"/>
-                                        <state key="normal" title="Down" image="Bottom"/>
-                                        <connections>
-                                            <action selector="downButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="HV8-wM-ppw"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex3-9a-1cH">
-                                        <rect key="frame" x="214" y="270" width="40" height="45"/>
-                                        <state key="normal" title="Music" image="music"/>
-                                        <connections>
-                                            <action selector="musicButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="hgH-KW-aWV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCM-dY-ByP">
-                                        <rect key="frame" x="135" y="45" width="50" height="55"/>
-                                        <state key="normal" title="Up" image="Top"/>
-                                        <connections>
-                                            <action selector="upButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="5JG-LS-G1R"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4u-Cu-YJc">
-                                        <rect key="frame" x="135" y="112" width="50" height="30"/>
-                                        <state key="normal" title="Ok"/>
-                                        <connections>
-                                            <action selector="okButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="ocQ-bf-0W4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-1m-quL">
-                                        <rect key="frame" x="185" y="99" width="50" height="55"/>
-                                        <state key="normal" title="Right" image="Right"/>
-                                        <connections>
-                                            <action selector="rightButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="3VW-lp-vsw"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Nothing Playing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kee-iq-mYY">
+                                <rect key="frame" x="0.0" y="274" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffX-Ty-4YS">
                                 <rect key="frame" x="0.0" y="72" width="320" height="154"/>
                                 <subviews>
@@ -595,12 +511,103 @@
                                     <constraint firstItem="faq-c0-eel" firstAttribute="width" secondItem="ffX-Ty-4YS" secondAttribute="width" id="fgy-gS-Sn0"/>
                                 </constraints>
                             </view>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZr-jk-RLS">
+                                <rect key="frame" x="0.0" y="248" width="320" height="320"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cus-Yr-931">
+                                        <rect key="frame" x="85" y="99" width="50" height="55"/>
+                                        <state key="normal" title="Left" image="Left"/>
+                                        <connections>
+                                            <action selector="leftButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="L5h-Tp-Bw8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oez-tI-IBt">
+                                        <rect key="frame" x="20" y="270" width="50" height="45"/>
+                                        <state key="normal" title="Home" image="Home"/>
+                                        <connections>
+                                            <action selector="homeButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="cbE-kw-can"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOu-es-UnX">
+                                        <rect key="frame" x="222" y="207" width="50" height="55"/>
+                                        <state key="normal" title="Back" image="Back"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="Tqh-mV-wIe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPE-JC-81S">
+                                        <rect key="frame" x="67" y="212" width="40" height="45"/>
+                                        <state key="normal" title="Home" image="Home"/>
+                                        <connections>
+                                            <action selector="homeButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="WLD-OT-wag"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGx-ei-LVM">
+                                        <rect key="frame" x="272" y="270" width="40" height="45"/>
+                                        <state key="normal" title="Pictures" image="picture"/>
+                                        <connections>
+                                            <action selector="pictureButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="4dD-nm-zOP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqS-ha-VAM">
+                                        <rect key="frame" x="92" y="270" width="40" height="45"/>
+                                        <state key="normal" title="Videos" image="video"/>
+                                        <connections>
+                                            <action selector="videoButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="VRx-jd-a5A"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-8P-1Mo">
+                                        <rect key="frame" x="135" y="153" width="50" height="55"/>
+                                        <state key="normal" title="Down" image="Bottom"/>
+                                        <connections>
+                                            <action selector="downButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="HV8-wM-ppw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex3-9a-1cH">
+                                        <rect key="frame" x="214" y="270" width="40" height="45"/>
+                                        <state key="normal" title="Music" image="music"/>
+                                        <connections>
+                                            <action selector="musicButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="hgH-KW-aWV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCM-dY-ByP">
+                                        <rect key="frame" x="135" y="45" width="50" height="55"/>
+                                        <state key="normal" title="Up" image="Top"/>
+                                        <connections>
+                                            <action selector="upButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="5JG-LS-G1R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4u-Cu-YJc">
+                                        <rect key="frame" x="135" y="112" width="50" height="30"/>
+                                        <state key="normal" title="Ok"/>
+                                        <connections>
+                                            <action selector="okButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="ocQ-bf-0W4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-1m-quL">
+                                        <rect key="frame" x="185" y="99" width="50" height="55"/>
+                                        <state key="normal" title="Right" image="Right"/>
+                                        <connections>
+                                            <action selector="rightButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="3VW-lp-vsw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAB-Kl-9Dx">
+                                        <rect key="frame" x="158" y="270" width="40" height="45"/>
+                                        <state key="normal" title="Movies" image="movie"/>
+                                        <connections>
+                                            <action selector="moviesButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="rKm-LC-XhA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ffX-Ty-4YS" firstAttribute="leading" secondItem="PZr-jk-RLS" secondAttribute="leading" id="2TE-cy-OD4"/>
                             <constraint firstAttribute="bottom" secondItem="ffX-Ty-4YS" secondAttribute="bottom" constant="342" id="2Vr-CM-su8"/>
                             <constraint firstItem="ffX-Ty-4YS" firstAttribute="top" secondItem="3Fz-Dy-Z6o" secondAttribute="bottom" constant="8" symbolic="YES" id="Hbl-FA-KIq"/>
+                            <constraint firstItem="Kee-iq-mYY" firstAttribute="width" secondItem="dz4-Bp-5su" secondAttribute="width" id="JgI-bm-6BZ"/>
                             <constraint firstItem="PZr-jk-RLS" firstAttribute="top" secondItem="ffX-Ty-4YS" secondAttribute="bottom" constant="22" id="P7y-6k-dUy"/>
                             <constraint firstItem="ffX-Ty-4YS" firstAttribute="leading" secondItem="dz4-Bp-5su" secondAttribute="leading" id="XJe-6W-L94"/>
                             <constraint firstItem="ffX-Ty-4YS" firstAttribute="trailing" secondItem="PZr-jk-RLS" secondAttribute="trailing" id="adq-8b-mgX"/>
@@ -615,6 +622,7 @@
                         <outlet property="activePlayerImage" destination="G7e-kF-qWE" id="2Tg-ev-6XO"/>
                         <outlet property="itemName" destination="ONY-Re-45R" id="lHs-VD-pdX"/>
                         <outlet property="navbar" destination="Qff-QY-xE8" id="OGt-m8-Dbf"/>
+                        <outlet property="nothingPlaying" destination="Kee-iq-mYY" id="OQC-Dz-xaz"/>
                         <outlet property="otherDetails" destination="faq-c0-eel" id="JTE-Co-O5y"/>
                         <outlet property="pause" destination="x6G-N9-HKi" id="DGb-sz-y0l"/>
                         <outlet property="play" destination="VkS-7s-a8m" id="20J-FD-pvn"/>
