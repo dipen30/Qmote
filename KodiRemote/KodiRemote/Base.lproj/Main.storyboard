@@ -545,18 +545,22 @@
                                             <action selector="fastRewindButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="PDm-bl-Shy"/>
                                         </connections>
                                     </button>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQO-Kk-w3R">
-                                        <rect key="frame" x="71" y="118" width="179" height="2"/>
-                                    </progressView>
+                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ITL-7a-IIV">
+                                        <rect key="frame" x="71" y="103" width="179" height="31"/>
+                                        <connections>
+                                            <action selector="editingEnd:" destination="QFs-Ga-y6R" eventType="editingDidEnd" id="eFA-Bw-Qsy"/>
+                                            <action selector="sliderTouchUp:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="YqC-L1-p1N"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="CNI-e2-CTz" secondAttribute="trailing" constant="3" id="5UX-fd-n71"/>
-                                    <constraint firstItem="RQO-Kk-w3R" firstAttribute="leading" secondItem="ffX-Ty-4YS" secondAttribute="leading" constant="71" id="DeJ-ds-Vbh"/>
                                     <constraint firstItem="bCp-gY-71f" firstAttribute="leading" secondItem="ffX-Ty-4YS" secondAttribute="leading" constant="4" id="GTB-Ao-css"/>
-                                    <constraint firstAttribute="trailing" secondItem="RQO-Kk-w3R" secondAttribute="trailing" constant="70" id="JBk-Dw-afe"/>
                                     <constraint firstItem="ONY-Re-45R" firstAttribute="width" secondItem="ffX-Ty-4YS" secondAttribute="width" constant="-110" id="dG3-6g-1Ai"/>
                                     <constraint firstItem="faq-c0-eel" firstAttribute="width" secondItem="ffX-Ty-4YS" secondAttribute="width" constant="-110" id="fgy-gS-Sn0"/>
+                                    <constraint firstItem="ITL-7a-IIV" firstAttribute="leading" secondItem="bCp-gY-71f" secondAttribute="trailing" constant="7" id="xoW-HD-cOU"/>
+                                    <constraint firstItem="CNI-e2-CTz" firstAttribute="leading" secondItem="ITL-7a-IIV" secondAttribute="trailing" constant="7" id="zI7-TC-pK3"/>
                                 </constraints>
                             </view>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZr-jk-RLS">
@@ -676,7 +680,7 @@
                         <outlet property="play" destination="VkS-7s-a8m" id="20J-FD-pvn"/>
                         <outlet property="playerRepeat" destination="p0N-t0-W70" id="v86-2J-6em"/>
                         <outlet property="playerShuffle" destination="SEY-Ff-3MI" id="tTO-sA-wVh"/>
-                        <outlet property="progressBar" destination="RQO-Kk-w3R" id="vfz-S3-oHr"/>
+                        <outlet property="seekBar" destination="ITL-7a-IIV" id="CSH-np-NOJ"/>
                         <outlet property="timeLabel" destination="bCp-gY-71f" id="g9n-9s-xh7"/>
                         <outlet property="totalTimeLabel" destination="CNI-e2-CTz" id="zN2-3M-YfJ"/>
                     </connections>

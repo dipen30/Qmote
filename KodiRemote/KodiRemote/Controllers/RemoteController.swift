@@ -22,7 +22,7 @@ class RemoteController: ViewController {
     
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var totalTimeLabel: UILabel!
-    @IBOutlet var progressBar: UIProgressView!
+    @IBOutlet var seekBar: UISlider!
     var playerId = 0
     var player_repeat = "off"
     var shuffle = 0
@@ -96,7 +96,7 @@ class RemoteController: ViewController {
                     self.timeLabel.text = self.toMinutes(response!["time"] as! NSDictionary)
                     self.totalTimeLabel.text = self.toMinutes(response!["totaltime"] as! NSDictionary)
                     
-                    self.progressBar.progress = (response!["percentage"] as! Float) / 100
+                    self.seekBar.value = (response!["percentage"] as! Float) / 100
                 })
                 
                 self.rc.jsonRpcCall("Player.GetItem", params: "{\"playerid\":\(self.playerId),\"properties\":[\"title\",\"artist\",\"thumbnail\", \"album\",\"year\"]}"){(response: AnyObject?) in
@@ -115,6 +115,13 @@ class RemoteController: ViewController {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
             self.syncPlayer()
         })
+    }
+    
+    @IBAction func sliderTouchUp(sender: UISlider) {
+        // RPC call for seek
+        let value = Int(sender.value * 100)
+        rc.jsonRpcCall("Player.Seek", params: "{\"playerid\":\(self.playerId), \"value\":\(value)}"){(response: AnyObject?) in
+        }
     }
     
     func generateResponse(jsonData: AnyObject){
