@@ -120,6 +120,7 @@ class RemoteController: ViewController {
     @IBAction func sliderTouchUp(sender: UISlider) {
         // RPC call for seek
         let value = Int(sender.value * 100)
+        self.seekBar.value = sender.value
         rc.jsonRpcCall("Player.Seek", params: "{\"playerid\":\(self.playerId), \"value\":\(value)}"){(response: AnyObject?) in
         }
     }
