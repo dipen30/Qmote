@@ -378,7 +378,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffX-Ty-4YS">
-                                <rect key="frame" x="0.0" y="72" width="320" height="154"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="174"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-Yt-jTi">
                                         <rect key="frame" x="181" y="66" width="20" height="20"/>
@@ -463,7 +463,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a89-LM-wOU">
-                                        <rect key="frame" x="9" y="134" width="20" height="20"/>
+                                        <rect key="frame" x="9" y="141" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="f4A-HI-Tmh"/>
                                             <constraint firstAttribute="height" constant="20" id="o1L-ap-Yq8"/>
@@ -474,7 +474,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2x-Js-Ojc">
-                                        <rect key="frame" x="146" y="134" width="20" height="20"/>
+                                        <rect key="frame" x="151" y="141" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="59w-Ba-VgB"/>
                                             <constraint firstAttribute="width" constant="20" id="Kb0-em-3fi"/>
@@ -485,7 +485,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0N-t0-W70">
-                                        <rect key="frame" x="217" y="134" width="20" height="20"/>
+                                        <rect key="frame" x="220" y="141" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Zo6-NJ-jka"/>
                                             <constraint firstAttribute="width" constant="20" id="fxA-kd-59g"/>
@@ -496,7 +496,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEY-Ff-3MI">
-                                        <rect key="frame" x="292" y="134" width="20" height="20"/>
+                                        <rect key="frame" x="292" y="141" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="U4x-LM-oEL"/>
                                             <constraint firstAttribute="width" constant="20" id="orY-wf-ADN"/>
@@ -507,7 +507,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRq-13-Lq0">
-                                        <rect key="frame" x="82" y="134" width="20" height="20"/>
+                                        <rect key="frame" x="80" y="141" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="PPw-LH-mXN"/>
                                             <constraint firstAttribute="width" constant="20" id="Pwv-VQ-nea"/>
@@ -557,109 +557,157 @@
                                     <constraint firstItem="CNI-e2-CTz" firstAttribute="leading" secondItem="ITL-7a-IIV" secondAttribute="trailing" constant="7" id="zI7-TC-pK3"/>
                                 </constraints>
                             </view>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZr-jk-RLS">
-                                <rect key="frame" x="0.0" y="248" width="320" height="320"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cus-Yr-931">
-                                        <rect key="frame" x="85" y="99" width="50" height="55"/>
-                                        <state key="normal" title="Left" image="Left"/>
-                                        <connections>
-                                            <action selector="leftButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="L5h-Tp-Bw8"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oez-tI-IBt">
-                                        <rect key="frame" x="20" y="270" width="50" height="45"/>
-                                        <state key="normal" title="Home" image="Home"/>
-                                        <connections>
-                                            <action selector="homeButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="cbE-kw-can"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOu-es-UnX">
-                                        <rect key="frame" x="222" y="207" width="50" height="55"/>
-                                        <state key="normal" title="Back" image="Back"/>
-                                        <connections>
-                                            <action selector="backButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="Tqh-mV-wIe"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPE-JC-81S">
-                                        <rect key="frame" x="67" y="212" width="40" height="45"/>
-                                        <state key="normal" title="Home" image="Home"/>
-                                        <connections>
-                                            <action selector="homeButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="WLD-OT-wag"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGx-ei-LVM">
-                                        <rect key="frame" x="272" y="270" width="40" height="45"/>
-                                        <state key="normal" title="Pictures" image="picture"/>
-                                        <connections>
-                                            <action selector="pictureButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="4dD-nm-zOP"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqS-ha-VAM">
-                                        <rect key="frame" x="92" y="270" width="40" height="45"/>
-                                        <state key="normal" title="Videos" image="video"/>
-                                        <connections>
-                                            <action selector="videoButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="VRx-jd-a5A"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-8P-1Mo">
-                                        <rect key="frame" x="135" y="153" width="50" height="55"/>
-                                        <state key="normal" title="Down" image="Bottom"/>
-                                        <connections>
-                                            <action selector="downButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="HV8-wM-ppw"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex3-9a-1cH">
-                                        <rect key="frame" x="214" y="270" width="40" height="45"/>
-                                        <state key="normal" title="Music" image="music"/>
-                                        <connections>
-                                            <action selector="musicButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="hgH-KW-aWV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCM-dY-ByP">
-                                        <rect key="frame" x="135" y="45" width="50" height="55"/>
-                                        <state key="normal" title="Up" image="Top"/>
-                                        <connections>
-                                            <action selector="upButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="5JG-LS-G1R"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4u-Cu-YJc">
-                                        <rect key="frame" x="135" y="112" width="50" height="30"/>
-                                        <state key="normal" title="Ok"/>
-                                        <connections>
-                                            <action selector="okButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="ocQ-bf-0W4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-1m-quL">
-                                        <rect key="frame" x="185" y="99" width="50" height="55"/>
-                                        <state key="normal" title="Right" image="Right"/>
-                                        <connections>
-                                            <action selector="rightButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="3VW-lp-vsw"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAB-Kl-9Dx">
-                                        <rect key="frame" x="158" y="270" width="40" height="45"/>
-                                        <state key="normal" title="Movies" image="movie"/>
-                                        <connections>
-                                            <action selector="moviesButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="rKm-LC-XhA"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Nothing Playing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kee-iq-mYY">
                                 <rect key="frame" x="0.0" y="150" width="320" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZr-jk-RLS">
+                                <rect key="frame" x="0.0" y="278" width="320" height="290"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cus-Yr-931">
+                                        <rect key="frame" x="85" y="69" width="50" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="KUq-zN-cdW"/>
+                                            <constraint firstAttribute="height" constant="55" id="Lnh-RT-IST"/>
+                                        </constraints>
+                                        <state key="normal" title="Left" image="Left"/>
+                                        <connections>
+                                            <action selector="leftButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="L5h-Tp-Bw8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oez-tI-IBt">
+                                        <rect key="frame" x="8" y="240" width="40" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="MKk-cS-ofL"/>
+                                            <constraint firstAttribute="width" constant="40" id="QrI-d4-VzG"/>
+                                        </constraints>
+                                        <state key="normal" title="Home" image="Home"/>
+                                        <connections>
+                                            <action selector="homeButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="cbE-kw-can"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOu-es-UnX">
+                                        <rect key="frame" x="222" y="177" width="40" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="0xd-Sw-8WQ"/>
+                                            <constraint firstAttribute="height" constant="45" id="aWk-0N-1GK"/>
+                                        </constraints>
+                                        <state key="normal" title="Back" image="Back"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="Tqh-mV-wIe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPE-JC-81S">
+                                        <rect key="frame" x="67" y="182" width="40" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="7d6-2K-D4s"/>
+                                            <constraint firstAttribute="height" constant="45" id="L6p-3w-wi4"/>
+                                        </constraints>
+                                        <state key="normal" title="Home" image="Home"/>
+                                        <connections>
+                                            <action selector="homeButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="WLD-OT-wag"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-8P-1Mo">
+                                        <rect key="frame" x="135" y="123" width="50" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="GMY-pb-Vrk"/>
+                                            <constraint firstAttribute="width" constant="50" id="kJf-hD-FjD"/>
+                                        </constraints>
+                                        <state key="normal" title="Down" image="Bottom"/>
+                                        <connections>
+                                            <action selector="downButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="HV8-wM-ppw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCM-dY-ByP">
+                                        <rect key="frame" x="135" y="15" width="50" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="9rG-hd-UK2"/>
+                                            <constraint firstAttribute="height" constant="55" id="yZW-J6-6R6"/>
+                                        </constraints>
+                                        <state key="normal" title="Up" image="Top"/>
+                                        <connections>
+                                            <action selector="upButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="5JG-LS-G1R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4u-Cu-YJc">
+                                        <rect key="frame" x="135" y="82" width="50" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="9ho-Y7-0Mv"/>
+                                            <constraint firstAttribute="height" constant="30" id="dRI-2P-pxP"/>
+                                        </constraints>
+                                        <state key="normal" title="Ok"/>
+                                        <connections>
+                                            <action selector="okButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="ocQ-bf-0W4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-1m-quL">
+                                        <rect key="frame" x="185" y="69" width="50" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="HMX-yi-s67"/>
+                                            <constraint firstAttribute="height" constant="55" id="ssq-yh-yyV"/>
+                                        </constraints>
+                                        <state key="normal" title="Right" image="Right"/>
+                                        <connections>
+                                            <action selector="rightButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="3VW-lp-vsw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAB-Kl-9Dx">
+                                        <rect key="frame" x="140" y="240" width="40" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="UIq-H2-xpp"/>
+                                            <constraint firstAttribute="width" constant="40" id="gsH-JK-0eK"/>
+                                        </constraints>
+                                        <state key="normal" title="Movies" image="movie"/>
+                                        <connections>
+                                            <action selector="moviesButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="rKm-LC-XhA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGx-ei-LVM">
+                                        <rect key="frame" x="272" y="240" width="40" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="C8K-Cf-Q0c"/>
+                                            <constraint firstAttribute="height" constant="45" id="WFI-zG-6Sq"/>
+                                        </constraints>
+                                        <state key="normal" title="Pictures" image="picture"/>
+                                        <connections>
+                                            <action selector="pictureButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="4dD-nm-zOP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex3-9a-1cH">
+                                        <rect key="frame" x="206" y="240" width="40" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="dAG-0i-519"/>
+                                            <constraint firstAttribute="height" constant="45" id="dPO-We-FoT"/>
+                                        </constraints>
+                                        <state key="normal" title="Music" image="music"/>
+                                        <connections>
+                                            <action selector="musicButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="hgH-KW-aWV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqS-ha-VAM">
+                                        <rect key="frame" x="74" y="240" width="40" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="QSC-B9-r84"/>
+                                            <constraint firstAttribute="width" constant="40" id="XHU-aC-VLS"/>
+                                        </constraints>
+                                        <state key="normal" title="Videos" image="video"/>
+                                        <connections>
+                                            <action selector="videoButton:" destination="QFs-Ga-y6R" eventType="touchUpInside" id="VRx-jd-a5A"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ffX-Ty-4YS" firstAttribute="leading" secondItem="PZr-jk-RLS" secondAttribute="leading" id="2TE-cy-OD4"/>
-                            <constraint firstAttribute="bottom" secondItem="ffX-Ty-4YS" secondAttribute="bottom" constant="342" id="2Vr-CM-su8"/>
+                            <constraint firstAttribute="bottom" secondItem="ffX-Ty-4YS" secondAttribute="bottom" constant="322" id="2Vr-CM-su8"/>
                             <constraint firstItem="Kee-iq-mYY" firstAttribute="width" secondItem="dz4-Bp-5su" secondAttribute="width" id="JgI-bm-6BZ"/>
-                            <constraint firstItem="PZr-jk-RLS" firstAttribute="top" secondItem="ffX-Ty-4YS" secondAttribute="bottom" constant="22" id="P7y-6k-dUy"/>
+                            <constraint firstItem="PZr-jk-RLS" firstAttribute="top" secondItem="ffX-Ty-4YS" secondAttribute="bottom" constant="32" id="P7y-6k-dUy"/>
                             <constraint firstItem="ffX-Ty-4YS" firstAttribute="top" secondItem="3Fz-Dy-Z6o" secondAttribute="bottom" constant="8" symbolic="YES" id="VsG-1S-fMe"/>
                             <constraint firstItem="ffX-Ty-4YS" firstAttribute="leading" secondItem="dz4-Bp-5su" secondAttribute="leading" id="XJe-6W-L94"/>
                             <constraint firstItem="PZr-jk-RLS" firstAttribute="bottom" secondItem="qYI-Cc-Jb9" secondAttribute="top" id="a7m-6Y-meR"/>
@@ -1141,30 +1189,30 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back" width="128" height="128"/>
-        <image name="Bottom" width="128" height="128"/>
-        <image name="Home" width="128" height="128"/>
-        <image name="Left" width="128" height="128"/>
-        <image name="Repeat" width="128" height="128"/>
-        <image name="Right" width="128" height="128"/>
-        <image name="Top" width="128" height="128"/>
+        <image name="Back" width="100" height="100"/>
+        <image name="Bottom" width="100" height="100"/>
+        <image name="Home" width="100" height="100"/>
+        <image name="Left" width="100" height="100"/>
+        <image name="Repeat" width="100" height="100"/>
+        <image name="Right" width="100" height="100"/>
+        <image name="Top" width="100" height="100"/>
         <image name="computer-devices" width="128" height="128"/>
-        <image name="fast-forward" width="128" height="85"/>
-        <image name="fast-rewind" width="128" height="85"/>
-        <image name="movie" width="128" height="128"/>
-        <image name="music" width="128" height="128"/>
+        <image name="fast-forward" width="100" height="100"/>
+        <image name="fast-rewind" width="100" height="100"/>
+        <image name="movie" width="100" height="100"/>
+        <image name="music" width="100" height="100"/>
         <image name="navicon" width="50" height="50"/>
-        <image name="next" width="128" height="128"/>
-        <image name="pause" width="128" height="128"/>
-        <image name="picture" width="128" height="128"/>
-        <image name="play" width="128" height="128"/>
-        <image name="previous" width="128" height="128"/>
-        <image name="shuffle" width="128" height="128"/>
-        <image name="stop" width="128" height="128"/>
-        <image name="video" width="128" height="128"/>
-        <image name="volume-down" width="128" height="128"/>
-        <image name="volume-mute" width="128" height="128"/>
-        <image name="volume-up" width="128" height="128"/>
+        <image name="next" width="100" height="100"/>
+        <image name="pause" width="100" height="100"/>
+        <image name="picture" width="100" height="100"/>
+        <image name="play" width="100" height="100"/>
+        <image name="previous" width="100" height="100"/>
+        <image name="shuffle" width="100" height="100"/>
+        <image name="stop" width="100" height="100"/>
+        <image name="video" width="100" height="100"/>
+        <image name="volume-down" width="100" height="100"/>
+        <image name="volume-mute" width="100" height="100"/>
+        <image name="volume-up" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Xtm-5W-5c6"/>
