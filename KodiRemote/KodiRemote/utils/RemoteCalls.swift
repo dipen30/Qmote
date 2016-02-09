@@ -36,18 +36,20 @@ class RemoteCalls: NSObject {
 		let task = session.dataTaskWithRequest(urlRequest, completionHandler: { (data, response, error) in
 			// do stuff with response, data & error here
             
-            do {
-                let jsonDict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0)) as? NSDictionary
-                if let jsonDict = jsonDict {
-                    // work with dictionary here
-                    let jsonData = jsonDict["result"]
-                    callback(jsonData)
-                } else {
-                    // more error handling
+            if data != nil {
+                do {
+                    let jsonDict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0)) as? NSDictionary
+                    if let jsonDict = jsonDict {
+                        // work with dictionary here
+                        let jsonData = jsonDict["result"]
+                        callback(jsonData)
+                    } else {
+                        // more error handling
+                    }
+                } catch let error as NSError {
+                    // error handling
+                    print(error)
                 }
-            } catch let error as NSError {
-                // error handling
-                print(error)
             }
 		})
 		
