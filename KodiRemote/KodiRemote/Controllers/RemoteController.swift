@@ -27,17 +27,22 @@ class RemoteController: ViewController {
     var player_repeat = "off"
     var shuffle = 0
     
+    @IBOutlet var musicButtonLeadingSpace: NSLayoutConstraint!
+    @IBOutlet var videoButtonTrailingSpace: NSLayoutConstraint!
+    
+    @IBOutlet var repeatButtonLeadingSpace: NSLayoutConstraint!
+    @IBOutlet var volumUpLeadingSpace: NSLayoutConstraint!
     
     @IBOutlet var playerRepeat: UIButton!
     @IBOutlet var playerShuffle: UIButton!
     
+    var rc: RemoteCalls!
     
-	
-	var rc: RemoteCalls!
-	
-	override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool) {
         
         self.view.viewWithTag(2)?.hidden = true
+        
+        self.updateViewBasedOnScreenSize()
         
         if global_ipaddress == "" {
             let discovery = self.storyboard?.instantiateViewControllerWithIdentifier("DiscoveryView") as! DiscoveryTableViewController
@@ -48,7 +53,31 @@ class RemoteController: ViewController {
             rc = RemoteCalls(ipaddress: global_ipaddress, port: global_port)
             self.syncPlayer()
         }
-	}
+    }
+    
+    func updateViewBasedOnScreenSize(){
+        // Updated constrains based on screen size
+        let viewWidth = self.view.bounds.size.width
+        if viewWidth < 350 {
+            
+            self.musicButtonLeadingSpace.constant = 26.0
+            self.videoButtonTrailingSpace.constant = 26.0
+            
+        }else if viewWidth > 350 && viewWidth < 400 {
+            
+            self.musicButtonLeadingSpace.constant = 40.0
+            self.videoButtonTrailingSpace.constant = 40.0
+            
+            self.repeatButtonLeadingSpace.constant = 70.0
+            self.volumUpLeadingSpace.constant = 70.0
+            
+        }else if viewWidth > 400 {
+            
+            self.repeatButtonLeadingSpace.constant = 80.0
+            self.volumUpLeadingSpace.constant = 80.0
+            
+        }
+    }
     
     func syncPlayer(){
         
@@ -72,19 +101,19 @@ class RemoteController: ViewController {
             self.playerId = response!["playerid"] as! Int
             
             self.rc.jsonRpcCall("Player.GetProperties", params: "{\"playerid\":\(self.playerId),\"properties\":[\"percentage\",\"time\",\"totaltime\", \"repeat\",\"shuffled\",\"speed\",\"subtitleenabled\"]}"){(response: AnyObject?) in
-
+                
                 dispatch_async(dispatch_get_main_queue(), {
-
+                    
                     let response = response as? NSDictionary
                     self.shuffle = response!["shuffled"] as! Int
                     self.player_repeat = response!["repeat"] as! String
-
+                    
                     let repeateImage = self.player_repeat == "off" ? "Repeat": "RepeatSelected"
                     self.playerRepeat.imageView?.image = UIImage(named: repeateImage)
                     
                     let suffleImage = self.shuffle == 1 ? "shuffleSelected" : "shuffle"
                     self.playerShuffle.imageView?.image = UIImage(named: suffleImage)
-
+                    
                     if response!["speed"] as! Int == 0 {
                         self.play.hidden = false
                         self.pause.hidden = true
@@ -108,7 +137,7 @@ class RemoteController: ViewController {
                 }
             }
         }
-
+        
         // 1 second trigger Time
         let triggerTime = Int64(NSEC_PER_SEC)
         
@@ -139,7 +168,7 @@ class RemoteController: ViewController {
             }
             
             if key as! String == "thumbnail" {
-
+                
                 self.activePlayerImage.contentMode = .ScaleAspectFit
                 
                 let url = NSURL(string: "http://" + global_ipaddress + ":" + global_port + "/image/" + (value as! String).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!)
@@ -222,61 +251,61 @@ class RemoteController: ViewController {
         rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"skipnext\"}"){(response: AnyObject?) in
         }
     }
-		
-	@IBAction func leftButton(sender: AnyObject) {
+    
+    @IBAction func leftButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.Left"){(response: AnyObject?) in
         }
-	}
-	
-	@IBAction func rightButton(sender: AnyObject) {
+    }
+    
+    @IBAction func rightButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.Right"){(response: AnyObject?) in
         }
-	}
-	
-	@IBAction func downButton(sender: AnyObject) {
+    }
+    
+    @IBAction func downButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.Down"){(response: AnyObject?) in
         }
-	}
-	
-	@IBAction func upButton(sender: AnyObject) {
+    }
+    
+    @IBAction func upButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.Up"){(response: AnyObject?) in
         }
-	}
-	
-	@IBAction func okButton(sender: AnyObject) {
+    }
+    
+    @IBAction func okButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.Select"){(response: AnyObject?) in
         }
-	}
-	
-	@IBAction func homeButton(sender: AnyObject) {
+    }
+    
+    @IBAction func homeButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.Home"){(response: AnyObject?) in
         }
-	}
-	
-	@IBAction func backButton(sender: AnyObject) {
+    }
+    
+    @IBAction func backButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.Back"){(response: AnyObject?) in
         }
-	}
-	
-	@IBAction func videoButton(sender: AnyObject) {
+    }
+    
+    @IBAction func videoButton(sender: AnyObject) {
         rc.jsonRpcCall("GUI.ActivateWindow", params: "{\"window\": \"videos\"}"){(response: AnyObject?) in
         }
-	}
-	
-	@IBAction func moviesButton(sender: AnyObject) {
+    }
+    
+    @IBAction func moviesButton(sender: AnyObject) {
         rc.jsonRpcCall("GUI.ActivateWindow", params: "{\"window\": \"video\"}"){(response: AnyObject?) in
         }
-	}
-	
-	@IBAction func musicButton(sender: AnyObject) {
+    }
+    
+    @IBAction func musicButton(sender: AnyObject) {
         rc.jsonRpcCall("GUI.ActivateWindow", params: "{\"window\": \"music\"}"){(response: AnyObject?) in
         }
-	}
-	
-	@IBAction func pictureButton(sender: AnyObject) {
+    }
+    
+    @IBAction func pictureButton(sender: AnyObject) {
         rc.jsonRpcCall("GUI.ActivateWindow", params: "{\"window\": \"pictures\"}"){(response: AnyObject?) in
         }
-	}
+    }
     
     @IBAction func volumeDownButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"volumedown\"}"){(response: AnyObject?) in
@@ -287,7 +316,7 @@ class RemoteController: ViewController {
         rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"mute\"}"){(response: AnyObject?) in
         }
     }
-	
+    
     @IBAction func volumeUpButton(sender: AnyObject) {
         rc.jsonRpcCall("Input.ExecuteAction", params: "{\"action\":\"volumeup\"}"){(response: AnyObject?) in
         }
