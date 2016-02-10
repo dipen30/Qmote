@@ -330,6 +330,7 @@
                                     <outlet property="movieLabel" destination="Azi-pm-Oli" id="iDS-Aw-ad2"/>
                                     <outlet property="timeLabel" destination="pp9-3s-wvh" id="dQn-qe-VF9"/>
                                     <outlet property="yearLabel" destination="9CC-kq-AdN" id="y6d-0J-lQ6"/>
+                                    <segue destination="SAm-R1-rTx" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Zy0-1g-Wb3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -988,6 +989,7 @@
                                 <connections>
                                     <outlet property="songImage" destination="BcG-8v-LDY" id="5Sp-C6-y5z"/>
                                     <outlet property="songName" destination="QXs-fY-TwZ" id="Zs8-IR-gSt"/>
+                                    <segue destination="SAm-R1-rTx" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="yEp-vc-Emm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1238,7 +1240,7 @@
         <image name="volume-up" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xtm-5W-5c6"/>
         <segue reference="qTI-sn-7u5"/>
+        <segue reference="Zy0-1g-Wb3"/>
     </inferredMetricsTieBreakers>
 </document>
