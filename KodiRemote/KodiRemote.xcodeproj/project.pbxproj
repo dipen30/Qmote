@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C12C85F31C7ADB5A0069E187 /* TvShowsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C85F21C7ADB5A0069E187 /* TvShowsTableViewController.swift */; };
 		C13738CE1C5F1E2000CC1814 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738CD1C5F1E2000CC1814 /* AppDelegate.swift */; };
 		C13738D01C5F1E2000CC1814 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738CF1C5F1E2000CC1814 /* ViewController.swift */; };
 		C13738D51C5F1E2000CC1814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13738D41C5F1E2000CC1814 /* Assets.xcassets */; };
@@ -16,7 +17,6 @@
 		C13738E51C5F1F7000CC1814 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738E21C5F1F7000CC1814 /* Utils.swift */; };
 		C13738F21C5F1FFE00CC1814 /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738E81C5F1FFE00CC1814 /* MoviesTableViewController.swift */; };
 		C13738F31C5F1FFE00CC1814 /* RemoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738E91C5F1FFE00CC1814 /* RemoteController.swift */; };
-		C13738F41C5F1FFE00CC1814 /* TvShowsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738EA1C5F1FFE00CC1814 /* TvShowsController.swift */; };
 		C13738F51C5F1FFE00CC1814 /* FilesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738EB1C5F1FFE00CC1814 /* FilesController.swift */; };
 		C13738F61C5F1FFE00CC1814 /* AddonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738EC1C5F1FFE00CC1814 /* AddonTableViewController.swift */; };
 		C13738F71C5F1FFE00CC1814 /* ArtistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738ED1C5F1FFE00CC1814 /* ArtistTableViewController.swift */; };
@@ -39,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C12C85F21C7ADB5A0069E187 /* TvShowsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowsTableViewController.swift; sourceTree = "<group>"; };
 		C13738CA1C5F1E2000CC1814 /* KodiRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KodiRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13738CD1C5F1E2000CC1814 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C13738CF1C5F1E2000CC1814 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		C13738E21C5F1F7000CC1814 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C13738E81C5F1FFE00CC1814 /* MoviesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		C13738E91C5F1FFE00CC1814 /* RemoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteController.swift; sourceTree = "<group>"; };
-		C13738EA1C5F1FFE00CC1814 /* TvShowsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowsController.swift; sourceTree = "<group>"; };
 		C13738EB1C5F1FFE00CC1814 /* FilesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesController.swift; sourceTree = "<group>"; };
 		C13738EC1C5F1FFE00CC1814 /* AddonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddonTableViewController.swift; sourceTree = "<group>"; };
 		C13738ED1C5F1FFE00CC1814 /* ArtistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTableViewController.swift; sourceTree = "<group>"; };
@@ -152,7 +152,6 @@
 			children = (
 				C13738E81C5F1FFE00CC1814 /* MoviesTableViewController.swift */,
 				C13738E91C5F1FFE00CC1814 /* RemoteController.swift */,
-				C13738EA1C5F1FFE00CC1814 /* TvShowsController.swift */,
 				C13738EB1C5F1FFE00CC1814 /* FilesController.swift */,
 				C13738EC1C5F1FFE00CC1814 /* AddonTableViewController.swift */,
 				C13738ED1C5F1FFE00CC1814 /* ArtistTableViewController.swift */,
@@ -160,6 +159,7 @@
 				C13738EF1C5F1FFE00CC1814 /* GenreTableViewController.swift */,
 				C13738F01C5F1FFE00CC1814 /* AlbumDetailsTableViewController.swift */,
 				C13738F11C5F1FFE00CC1814 /* DiscoveryTableViewController.swift */,
+				C12C85F21C7ADB5A0069E187 /* TvShowsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,7 +249,6 @@
 				C13738FB1C5F1FFE00CC1814 /* DiscoveryTableViewController.swift in Sources */,
 				C13738F91C5F1FFE00CC1814 /* GenreTableViewController.swift in Sources */,
 				C137391F1C5F29D100CC1814 /* SWRevealViewController.m in Sources */,
-				C13738F41C5F1FFE00CC1814 /* TvShowsController.swift in Sources */,
 				C13738E31C5F1F7000CC1814 /* RemoteCalls.swift in Sources */,
 				C13739031C5F200900CC1814 /* MoviesTableViewCell.swift in Sources */,
 				C13738F51C5F1FFE00CC1814 /* FilesController.swift in Sources */,
@@ -260,6 +259,7 @@
 				C13738F61C5F1FFE00CC1814 /* AddonTableViewController.swift in Sources */,
 				C13738F71C5F1FFE00CC1814 /* ArtistTableViewController.swift in Sources */,
 				C13739081C5F200900CC1814 /* AlbumDetailsTableViewCell.swift in Sources */,
+				C12C85F31C7ADB5A0069E187 /* TvShowsTableViewController.swift in Sources */,
 				C13738CE1C5F1E2000CC1814 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

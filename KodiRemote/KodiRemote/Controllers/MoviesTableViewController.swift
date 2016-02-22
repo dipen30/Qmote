@@ -100,7 +100,13 @@ class MoviesTableViewController: BaseTableViewController {
                     }
                     
                     if key as! String == "file" {
-                        self.movieFile.append(value as! String)
+                        var file_name = value as! String
+                        if file_name.hasPrefix("http") || file_name.hasPrefix("plugin"){
+                            self.movieFile.append(file_name)
+                        }else{
+                            file_name = file_name.stringByReplacingOccurrencesOfString("\\", withString: "/")
+                            self.movieFile.append(file_name)
+                        }
                     }
                     
                     if key as! String == "genre"{
