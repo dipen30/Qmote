@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C12C85F31C7ADB5A0069E187 /* TvShowsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C85F21C7ADB5A0069E187 /* TvShowsTableViewController.swift */; };
+		C12C85F51C7B095A0069E187 /* TvShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C85F41C7B095A0069E187 /* TvShowTableViewCell.swift */; };
 		C13738CE1C5F1E2000CC1814 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738CD1C5F1E2000CC1814 /* AppDelegate.swift */; };
 		C13738D01C5F1E2000CC1814 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738CF1C5F1E2000CC1814 /* ViewController.swift */; };
 		C13738D51C5F1E2000CC1814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13738D41C5F1E2000CC1814 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		C12C85F21C7ADB5A0069E187 /* TvShowsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowsTableViewController.swift; sourceTree = "<group>"; };
+		C12C85F41C7B095A0069E187 /* TvShowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowTableViewCell.swift; sourceTree = "<group>"; };
 		C13738CA1C5F1E2000CC1814 /* KodiRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KodiRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13738CD1C5F1E2000CC1814 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C13738CF1C5F1E2000CC1814 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				C13739001C5F200900CC1814 /* GenreTableViewCell.swift */,
 				C13739011C5F200900CC1814 /* AlbumDetailsTableViewCell.swift */,
 				C13739021C5F200900CC1814 /* DiscoveryTableViewCell.swift */,
+				C12C85F41C7B095A0069E187 /* TvShowTableViewCell.swift */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				C13738E51C5F1F7000CC1814 /* Utils.swift in Sources */,
 				C13738E41C5F1F7000CC1814 /* Globals.swift in Sources */,
 				C13739061C5F200900CC1814 /* AlbumsTableViewCell.swift in Sources */,
+				C12C85F51C7B095A0069E187 /* TvShowTableViewCell.swift in Sources */,
 				C13739071C5F200900CC1814 /* GenreTableViewCell.swift in Sources */,
 				C13738D01C5F1E2000CC1814 /* ViewController.swift in Sources */,
 				C13738FB1C5F1FFE00CC1814 /* DiscoveryTableViewController.swift in Sources */,
