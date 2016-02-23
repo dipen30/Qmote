@@ -110,7 +110,7 @@ class MoviesTableViewController: BaseTableViewController {
                     }
                     
                     if key as! String == "genre"{
-                        self.movieGenres.append(value.componentsJoinedByString(""))
+                        self.movieGenres.append(value.componentsJoinedByString(","))
                     }
                     
                     if key as! String == "runtime"{

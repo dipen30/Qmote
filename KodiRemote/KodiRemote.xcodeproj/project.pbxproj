@@ -37,6 +37,7 @@
 		C137391B1C5F21B900CC1814 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13739181C5F21B900CC1814 /* BaseTableViewController.swift */; };
 		C137391C1C5F21B900CC1814 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13739191C5F21B900CC1814 /* NavigationBar.swift */; };
 		C137391F1C5F29D100CC1814 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C137391E1C5F29D100CC1814 /* SWRevealViewController.m */; };
+		C1399C341C7C7BBE00D9AD3B /* TvShowDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1399C331C7C7BBE00D9AD3B /* TvShowDetailsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		C13739191C5F21B900CC1814 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		C137391D1C5F29D100CC1814 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		C137391E1C5F29D100CC1814 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		C1399C331C7C7BBE00D9AD3B /* TvShowDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowDetailsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				C13738F01C5F1FFE00CC1814 /* AlbumDetailsTableViewController.swift */,
 				C13738F11C5F1FFE00CC1814 /* DiscoveryTableViewController.swift */,
 				C12C85F21C7ADB5A0069E187 /* TvShowsTableViewController.swift */,
+				C1399C331C7C7BBE00D9AD3B /* TvShowDetailsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				C13738E51C5F1F7000CC1814 /* Utils.swift in Sources */,
 				C13738E41C5F1F7000CC1814 /* Globals.swift in Sources */,
 				C13739061C5F200900CC1814 /* AlbumsTableViewCell.swift in Sources */,
+				C1399C341C7C7BBE00D9AD3B /* TvShowDetailsController.swift in Sources */,
 				C12C85F51C7B095A0069E187 /* TvShowTableViewCell.swift in Sources */,
 				C13739071C5F200900CC1814 /* GenreTableViewCell.swift in Sources */,
 				C13738D01C5F1E2000CC1814 /* ViewController.swift in Sources */,

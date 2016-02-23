@@ -10,6 +10,7 @@ import UIKit
 
 class TvShowsTableViewController: BaseTableViewController {
 
+    var tvShowIds = [Int]()
     var tvShowImages = [String]()
     var tvShowNames = [String]()
     var tvShowEpisodes = [String]()
@@ -68,9 +69,6 @@ class TvShowsTableViewController: BaseTableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    }
-    
     func downloadImage(url: NSURL, imageURL: UIImageView){
         getImageDataFromUrl(url) { (data, response, error)  in
             dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -86,9 +84,9 @@ class TvShowsTableViewController: BaseTableViewController {
         let total = jsonData["limits"]!!["total"] as! Int
         
         if total != 0 {
-            let moviesDetails = jsonData["tvshows"] as! NSArray
+            let tvShows = jsonData["tvshows"] as! NSArray
             
-            for item in moviesDetails{
+            for item in tvShows {
                 let obj = item as! NSDictionary
                 for (key, value) in obj {
                     if key as! String == "label" {
@@ -109,6 +107,10 @@ class TvShowsTableViewController: BaseTableViewController {
                         self.tvShowPremiered.append(value as! String)
                     }
                     
+                    if key as! String == "tvshowid" {
+                        self.tvShowIds.append(value as! Int)
+                    }
+                    
                     if key as! String == "thumbnail"{
                         var thumbnail = value as! String
                         thumbnail = thumbnail.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
@@ -118,6 +120,16 @@ class TvShowsTableViewController: BaseTableViewController {
             }
         }else {
             // Display No data found message
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TvShowTabBarController" {
+            let tvTabBarC = segue.destinationViewController as! UITabBarController
+            let destination = tvTabBarC.viewControllers?.first as! TvShowDetailsController
+            if let tvShowIndex = tableView.indexPathForSelectedRow?.row {
+                destination.tvshowid = self.tvShowIds[tvShowIndex]
+            }
         }
     }
 
