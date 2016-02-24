@@ -10,13 +10,14 @@ import UIKit
 
 class TvShowDetailsController: UIViewController {
     
+    @IBOutlet var tvShowArtImage: UIImageView!
     @IBOutlet var tvShowImage: UIImageView!
     @IBOutlet var tvShowName: UILabel!
     @IBOutlet var tvShowEpisodes: UILabel!
     @IBOutlet var tvShowPremiered: UILabel!
     @IBOutlet var tvShowGenre: UILabel!
     @IBOutlet var tvShowRatings: UILabel!
-    @IBOutlet var tvShowPlot: UILabel!
+    @IBOutlet var tvShowPlot: UITextView!
     
     var tvshowid = Int()
     
@@ -27,12 +28,25 @@ class TvShowDetailsController: UIViewController {
         
         // TODO: use shared preference to get ip address and port.
         self.rc = RemoteCalls(ipaddress: global_ipaddress, port: global_port)
-        self.rc.jsonRpcCall("VideoLibrary.GetTVShowDetails", params: "{\"tvshowid\":\(tvshowid),\"properties\":[\"title\",\"thumbnail\",\"episode\",\"premiered\",\"watchedepisodes\",\"genre\",\"plot\",\"cast\",\"rating\",\"studio\"]}"){(response: AnyObject?) in
+        self.rc.jsonRpcCall("VideoLibrary.GetTVShowDetails", params: "{\"tvshowid\":\(tvshowid),\"properties\":[\"art\",\"title\",\"thumbnail\",\"episode\",\"premiered\",\"watchedepisodes\",\"genre\",\"plot\",\"cast\",\"rating\",\"studio\"]}"){(response: AnyObject?) in
 
             dispatch_async(dispatch_get_main_queue()) {
                 self.generateResponse(response as! NSDictionary)
             }
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tvShowName.text = ""
+        self.tvShowEpisodes.text = ""
+        self.tvShowPremiered.text = ""
+        self.tvShowGenre.text = ""
+        self.tvShowRatings.text = ""
+        
+        self.tvShowPlot.text = ""
+        
     }
     
     func generateResponse(jsonData: AnyObject){
@@ -47,16 +61,27 @@ class TvShowDetailsController: UIViewController {
         self.tvShowRatings.text = String(tvShowDetails["rating"]!) + "/10"
         
         self.tvShowPlot.text = String(tvShowDetails["plot"]!)
-        self.tvShowPlot.numberOfLines = 0
-        self.tvShowPlot.sizeToFit()
         
         self.tvShowImage.contentMode = .ScaleAspectFit
+        self.tvShowImage.layer.zPosition = 1
         var thumbnail = String(tvShowDetails["thumbnail"]!)
         if thumbnail != "" {
             thumbnail = thumbnail.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
             let url = NSURL(string: "http://" + global_ipaddress + ":" + global_port + "/image/" + thumbnail)
             
             self.downloadImage(url!, imageURL: self.tvShowImage)
+        }
+        
+        self.tvShowArtImage.contentMode = .ScaleAspectFill
+        let art = tvShowDetails["art"]!
+        if art.count != 0 {
+            var fanart = art["fanart"] as! String
+            if fanart != "" {
+                fanart = fanart.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
+                let url = NSURL(string: "http://" + global_ipaddress + ":" + global_port + "/image/" + fanart)
+                
+                self.downloadImage(url!, imageURL: self.tvShowArtImage)
+            }
         }
     }
     
