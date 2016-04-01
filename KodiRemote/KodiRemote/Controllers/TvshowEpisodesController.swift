@@ -13,6 +13,7 @@ class TvshowEpisodesController: UITableViewController {
     var episodeImages = [String]()
     var episodeTitles = [String]()
     var episodeNumbers = [String]()
+    var episodeFiles = [String]()
     var runtimes = [String]()
     var episodesAired = [String]()
     var imageCache = [String:UIImage]()
@@ -27,7 +28,7 @@ class TvshowEpisodesController: UITableViewController {
         self.navigationItem.title = seasonName
         
         self.rc = RemoteCalls(ipaddress: global_ipaddress, port: global_port)
-        self.rc.jsonRpcCall("VideoLibrary.GetEpisodes", params: "{\"tvshowid\":\(tvshow_id),\"season\":\(season), \"properties\":[\"title\",\"thumbnail\",\"firstaired\",\"runtime\",\"episode\"]}"){(response: AnyObject?) in
+        self.rc.jsonRpcCall("VideoLibrary.GetEpisodes", params: "{\"tvshowid\":\(tvshow_id),\"season\":\(season), \"properties\":[\"title\",\"thumbnail\",\"firstaired\",\"runtime\",\"episode\",\"file\"]}"){(response: AnyObject?) in
             
             self.generateSeasonResponse(response as! NSDictionary)
             
@@ -69,6 +70,11 @@ class TvshowEpisodesController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.rc.jsonRpcCall("Player.Open", params: "{\"item\":{\"file\":\"\(self.episodeFiles[indexPath.row])\"}}"){ (response: AnyObject?) in
+        }
+    }
+    
     func downloadImage(url: NSURL, imageURL: UIImageView){
         getImageDataFromUrl(url) { (data, response, error)  in
             dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -104,6 +110,16 @@ class TvshowEpisodesController: UITableViewController {
                     if key as! String == "runtime" {
                         let runtime = value as! Int / 60
                         self.runtimes.append(String(runtime) + " min")
+                    }
+                    
+                    if key as! String == "file" {
+                        var file_name = value as! String
+                        if file_name.hasPrefix("http") || file_name.hasPrefix("plugin"){
+                            self.episodeFiles.append(file_name)
+                        }else{
+                            file_name = file_name.stringByReplacingOccurrencesOfString("\\", withString: "/")
+                            self.episodeFiles.append(file_name)
+                        }
                     }
                     
                     if key as! String == "thumbnail"{
