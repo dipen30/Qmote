@@ -129,6 +129,7 @@ class TvShowsTableViewController: BaseTableViewController {
             let destination = tvTabBarC.viewControllers?.first as! TvShowDetailsController
             if let tvShowIndex = tableView.indexPathForSelectedRow?.row {
                 destination.tvshowid = self.tvShowIds[tvShowIndex]
+                segue.destinationViewController.navigationItem.title = self.tvShowNames[tvShowIndex]
             }
         }
     }

@@ -11,3 +11,5 @@ import Foundation
 
 var global_ipaddress: String = ""
 var global_port: String = ""
+
+var tvshow_id: Int = 0

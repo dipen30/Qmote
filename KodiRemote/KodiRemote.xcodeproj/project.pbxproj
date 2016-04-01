@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1194F591CAD3DE200548545 /* TvShowSeasonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1194F581CAD3DE200548545 /* TvShowSeasonsTableViewCell.swift */; };
 		C12C85F31C7ADB5A0069E187 /* TvShowsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C85F21C7ADB5A0069E187 /* TvShowsTableViewController.swift */; };
 		C12C85F51C7B095A0069E187 /* TvShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C85F41C7B095A0069E187 /* TvShowTableViewCell.swift */; };
 		C13738CE1C5F1E2000CC1814 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738CD1C5F1E2000CC1814 /* AppDelegate.swift */; };
@@ -38,9 +39,13 @@
 		C137391C1C5F21B900CC1814 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13739191C5F21B900CC1814 /* NavigationBar.swift */; };
 		C137391F1C5F29D100CC1814 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C137391E1C5F29D100CC1814 /* SWRevealViewController.m */; };
 		C1399C341C7C7BBE00D9AD3B /* TvShowDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1399C331C7C7BBE00D9AD3B /* TvShowDetailsController.swift */; };
+		C13CDA261CAE461C009711FA /* TvshowEpisodesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13CDA251CAE461C009711FA /* TvshowEpisodesController.swift */; };
+		C13CDA281CAE4A9D009711FA /* TvShowEpisodesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13CDA271CAE4A9D009711FA /* TvShowEpisodesViewCell.swift */; };
+		C1582C9A1CABDBF40045C83A /* TvShowSeasonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1582C991CABDBF40045C83A /* TvShowSeasonsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C1194F581CAD3DE200548545 /* TvShowSeasonsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowSeasonsTableViewCell.swift; sourceTree = "<group>"; };
 		C12C85F21C7ADB5A0069E187 /* TvShowsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowsTableViewController.swift; sourceTree = "<group>"; };
 		C12C85F41C7B095A0069E187 /* TvShowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowTableViewCell.swift; sourceTree = "<group>"; };
 		C13738CA1C5F1E2000CC1814 /* KodiRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KodiRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +81,9 @@
 		C137391D1C5F29D100CC1814 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		C137391E1C5F29D100CC1814 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		C1399C331C7C7BBE00D9AD3B /* TvShowDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowDetailsController.swift; sourceTree = "<group>"; };
+		C13CDA251CAE461C009711FA /* TvshowEpisodesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvshowEpisodesController.swift; sourceTree = "<group>"; };
+		C13CDA271CAE4A9D009711FA /* TvShowEpisodesViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowEpisodesViewCell.swift; sourceTree = "<group>"; };
+		C1582C991CABDBF40045C83A /* TvShowSeasonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowSeasonsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +156,8 @@
 				C13739011C5F200900CC1814 /* AlbumDetailsTableViewCell.swift */,
 				C13739021C5F200900CC1814 /* DiscoveryTableViewCell.swift */,
 				C12C85F41C7B095A0069E187 /* TvShowTableViewCell.swift */,
+				C1194F581CAD3DE200548545 /* TvShowSeasonsTableViewCell.swift */,
+				C13CDA271CAE4A9D009711FA /* TvShowEpisodesViewCell.swift */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -166,6 +176,8 @@
 				C13738F11C5F1FFE00CC1814 /* DiscoveryTableViewController.swift */,
 				C12C85F21C7ADB5A0069E187 /* TvShowsTableViewController.swift */,
 				C1399C331C7C7BBE00D9AD3B /* TvShowDetailsController.swift */,
+				C1582C991CABDBF40045C83A /* TvShowSeasonsController.swift */,
+				C13CDA251CAE461C009711FA /* TvshowEpisodesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13CDA261CAE461C009711FA /* TvshowEpisodesController.swift in Sources */,
 				C13739091C5F200900CC1814 /* DiscoveryTableViewCell.swift in Sources */,
 				C13738FA1C5F1FFE00CC1814 /* AlbumDetailsTableViewController.swift in Sources */,
 				C13738F21C5F1FFE00CC1814 /* MoviesTableViewController.swift in Sources */,
@@ -260,9 +273,12 @@
 				C13738E31C5F1F7000CC1814 /* RemoteCalls.swift in Sources */,
 				C13739031C5F200900CC1814 /* MoviesTableViewCell.swift in Sources */,
 				C13738F51C5F1FFE00CC1814 /* FilesController.swift in Sources */,
+				C1582C9A1CABDBF40045C83A /* TvShowSeasonsController.swift in Sources */,
 				C13738F31C5F1FFE00CC1814 /* RemoteController.swift in Sources */,
+				C1194F591CAD3DE200548545 /* TvShowSeasonsTableViewCell.swift in Sources */,
 				C137391A1C5F21B900CC1814 /* BaseTabBarController.swift in Sources */,
 				C137391B1C5F21B900CC1814 /* BaseTableViewController.swift in Sources */,
+				C13CDA281CAE4A9D009711FA /* TvShowEpisodesViewCell.swift in Sources */,
 				C13739051C5F200900CC1814 /* ArtistsTableViewCell.swift in Sources */,
 				C13738F61C5F1FFE00CC1814 /* AddonTableViewController.swift in Sources */,
 				C13738F71C5F1FFE00CC1814 /* ArtistTableViewController.swift in Sources */,

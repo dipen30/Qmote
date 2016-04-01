@@ -28,6 +28,7 @@ class TvShowDetailsController: UIViewController {
         
         // TODO: use shared preference to get ip address and port.
         self.rc = RemoteCalls(ipaddress: global_ipaddress, port: global_port)
+        tvshow_id = tvshowid
         self.rc.jsonRpcCall("VideoLibrary.GetTVShowDetails", params: "{\"tvshowid\":\(tvshowid),\"properties\":[\"art\",\"title\",\"thumbnail\",\"episode\",\"premiered\",\"watchedepisodes\",\"genre\",\"plot\",\"cast\",\"rating\",\"studio\"]}"){(response: AnyObject?) in
 
             dispatch_async(dispatch_get_main_queue()) {
