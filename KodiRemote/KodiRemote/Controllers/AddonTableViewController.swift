@@ -1,6 +1,6 @@
 //
 //  AddonTableViewController.swift
-//  KodiRemote
+//  Kodi Remote 
 //
 //  Created by Quixom Technology on 01/01/16.
 //  Copyright © 2016 Quixom Technology. All rights reserved.
@@ -8,28 +8,9 @@
 
 import UIKit
 
-extension UIColor {
-    convenience init(red: Int, green: Int, blue: Int) {
-        assert(red >= 0 && red <= 255, "Invalid red component")
-        assert(green >= 0 && green <= 255, "Invalid green component")
-        assert(blue >= 0 && blue <= 255, "Invalid blue component")
-        
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-    }
-    
-    convenience init(hex:Int) {
-        self.init(red:(hex >> 16) & 0xff, green:(hex >> 8) & 0xff, blue:hex & 0xff)
-    }
-}
-
 class AddonTableViewController: BaseTableViewController {
 
-    var addonsName = [String]()
-    var addonsSummary = [String]()
-    var addonImages = [String]()
-    var addonInitials = [String]()
-    var imageCache = [String:UIImage]()
-    let backgroundColors = [0xFF2D55, 0x5856D6, 0x007AFF, 0x34AADC, 0x5AC8FA, 0x4CD964, 0xFF3B30, 0xFF9500, 0xFFCC00, 0x8E8E93, 0xC7C7CC, 0xD6CEC3]
+    var addonObjs = NSArray()
     
     var rc: RemoteCalls!
     
@@ -40,107 +21,65 @@ class AddonTableViewController: BaseTableViewController {
         rc.jsonRpcCall("Addons.GetAddons", params: "{\"properties\":[\"name\",\"summary\",\"thumbnail\"],\"type\":\"xbmc.python.pluginsource\"}"){(response: AnyObject?) in
             self.generateResponse(response as! NSDictionary)
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.addonsName.count
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.addonObjs.count
     }
     
-    // Set the spacing between sections
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("AddonsTableViewCell", forIndexPath: indexPath) as! AddonTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddonsTableViewCell", for: indexPath) as! AddonTableViewCell
         
-        let row = indexPath.row
-        cell.addonLabel.text = self.addonsName[row]
-        cell.summary.text = self.addonsSummary[row]
+        let addonDetails = self.addonObjs[(indexPath as NSIndexPath).row] as! NSDictionary
+        cell.addonLabel.text = addonDetails["name"] as? String
+        cell.summary.text = addonDetails["summary"] as? String
         
-        if self.addonImages[row] != ""{
-            cell.addonInitial.hidden = true
-            let url = NSURL(string: self.addonImages[row])
+        let thumbnail = addonDetails["thumbnail"] as! String
         
-            cell.addonImage.contentMode = .ScaleAspectFit
+        if thumbnail != ""{
+            cell.addonInitial.isHidden = true
+            let url = URL(string: getThumbnailUrl(thumbnail))
         
-            if let img = self.imageCache[self.addonImages[row]]{
-                cell.addonImage.image = img
-            }else{
-                self.downloadImage(url!, imageURL: cell.addonImage)
-            }
+            cell.addonImage.contentMode = .scaleAspectFit
+            
+            cell.addonImage.kf.setImage(with: url!)
+
         }else{
-            cell.imageView?.hidden = true
+            cell.imageView?.isHidden = true
             let randomColor = backgroundColors[Int(arc4random_uniform(UInt32(backgroundColors.count)))]
-            cell.addonInitial.text = self.addonInitials[row]
+            
+            let name = addonDetails["name"] as! String
+            let index1 = name.characters.index(name.startIndex, offsetBy: 1)
+            
+            cell.addonInitial.text = name.substring(to: index1)
             cell.addonInitial.backgroundColor = UIColor(hex: randomColor)
         }
-        
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRectMake(0.0, cell.frame.height - 1, cell.frame.width, 0.5)
-        bottomLine.backgroundColor = UIColor.grayColor().CGColor
-        cell.layer.addSublayer(bottomLine)
-        cell.clipsToBounds = true
         
         return cell
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // call jsonRPC call to display Details
-    }
-    
-    func downloadImage(url: NSURL, imageURL: UIImageView){
-        getImageDataFromUrl(url) { (data, response, error)  in
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                guard let data = data where error == nil else { return }
-                let image = UIImage(data: data)
-                self.imageCache[url.absoluteString] = image
-                imageURL.image = image
-            }
+        let addon = ( self.addonObjs[(indexPath as NSIndexPath).row] as! NSDictionary)
+        rc.jsonRpcCall("Addons.ExecuteAddon", params: "{\"addonid\":\"\(addon["addonid"] as! String)\"}"){(response: AnyObject?) in
         }
     }
     
-    func generateResponse(jsonData: AnyObject){
-        let total = jsonData["limits"]!!["total"] as! Int
+    func generateResponse(_ jsonData: AnyObject){
+        let total = (jsonData["limits"] as! NSDictionary)["total"] as! Int
         
         if total != 0 {
-            let moviesDetails = jsonData["addons"] as! NSArray
+            let addonDetails = jsonData["addons"] as! NSArray
             
-            for item in moviesDetails{
-                let obj = item as! NSDictionary
-                for (key, value) in obj {
-                    if key as! String == "name" {
-                        let name = value as! String
-                        addonsName.append(name)
-                        let index1 = name.startIndex.advancedBy(1)
-                        addonInitials.append(name.substringToIndex(index1))
-                    }
-                    
-                    if key as! String == "summary" {
-                        addonsSummary.append(value as! String)
-                    }
-                    
-                    if key as! String == "thumbnail"{
-                        var thumbnail = value as! String
-                        
-                        if thumbnail != ""{
-                            thumbnail = thumbnail.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
-                            addonImages.append("http://" + global_ipaddress + ":" + global_port + "/image/" + thumbnail)
-                        }else{
-                            addonImages.append("")
-                        }
-                    }
-
-                }
-            }
+            self.addonObjs = addonDetails
         }else {
             // Display No data found message
         }

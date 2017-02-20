@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Rewind.png",
+      "filename" : "ic_fast_rewind_48pt.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "ic_fast_rewind_48pt_2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "ic_fast_rewind_48pt_3x.png",
       "scale" : "3x"
     }
   ],

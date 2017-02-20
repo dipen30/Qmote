@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  KodiRemote
+//  Kodi Remote 
 //
 //  Created by Quixom Technology on 01/02/16.
 //  Copyright © 2016 Quixom Technology. All rights reserved.
@@ -17,14 +17,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         navbar.target = self.revealViewController()
-        navbar.action = "revealToggle:"
+        navbar.action = #selector(SWRevealViewController.revealToggle(_:))
         
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        //self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
+        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        //view.addGestureRecognizer(tap)
         
-        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        //self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
     
     override func didReceiveMemoryWarning() {

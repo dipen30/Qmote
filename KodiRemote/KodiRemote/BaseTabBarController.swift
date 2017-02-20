@@ -1,6 +1,6 @@
 //
 //  BaseTabBarController.swift
-//  KodiRemote
+//  Kodi Remote 
 //
 //  Created by Quixom Technology on 04/01/16.
 //  Copyright © 2016 Quixom Technology. All rights reserved.
@@ -17,7 +17,7 @@ class BaseTabBarController: UITabBarController {
         super.viewDidLoad()
         
         navbar.target = self.revealViewController()
-        navbar.action = "revealToggle:"
+        navbar.action = #selector(SWRevealViewController.revealToggle(_:))
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())

@@ -1,6 +1,6 @@
 //
 //  DiscoveryTableViewController.swift
-//  KodiRemote
+//  Kodi Remote 
 //
 //  Created by Quixom Technology on 25/01/16.
 //  Copyright © 2016 Quixom Technology. All rights reserved.
@@ -8,62 +8,56 @@
 
 import UIKit
 
-class DiscoveryTableViewController: BaseTableViewController, NSNetServiceDelegate, NSNetServiceBrowserDelegate {
+class DiscoveryTableViewController: BaseTableViewController, NetServiceDelegate, NetServiceBrowserDelegate {
 
-    let browser = NSNetServiceBrowser()
+    let browser = NetServiceBrowser()
     var services: NSMutableArray = []
     var serviceNames = [String]()
     var serviceImages = [String]()
     var serviceIps = [String]()
     var servicePorts = [Int]()
     
-    var rc: RemoteCalls!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.browser.delegate = self
-        self.browser.searchForServicesOfType("_http._tcp", inDomain: "local.")
+        self.browser.searchForServices(ofType: "_http._tcp", inDomain: "local.")
 
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.serviceNames.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DiscoveryTableViewCell", forIndexPath: indexPath) as! DiscoveryTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DiscoveryTableViewCell", for: indexPath) as! DiscoveryTableViewCell
         
-        let row = indexPath.row
+        let row = (indexPath as NSIndexPath).row
         cell.serviceName.text = self.serviceNames[row]
         cell.serviceIp.text = self.serviceIps[row]
         cell.servicePort.text = String(self.servicePorts[row])
         
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRectMake(0.0, cell.frame.height - 1, cell.frame.width, 0.5)
-        bottomLine.backgroundColor = UIColor.grayColor().CGColor
-        cell.layer.addSublayer(bottomLine)
-        cell.clipsToBounds = true
-        
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        global_ipaddress = self.serviceIps[indexPath.row]
-        global_port = String(self.servicePorts[indexPath.row])
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        global_ipaddress = self.serviceIps[(indexPath as NSIndexPath).row]
+        global_port = String(self.servicePorts[(indexPath as NSIndexPath).row])
         
-        rc = RemoteCalls(ipaddress: global_ipaddress, port: global_port)
+        let previous_ip = UserDefaults.standard
+        previous_ip.setValue(global_ipaddress, forKey: "ip")
+        previous_ip.setValue(global_port, forKey: "port")
         
         self.browser.stop()
     }
     
     func updateTable(){
         for service in self.services {
-            let result = jsonifyService(service as! NSNetService)
+            let result = jsonifyService(service as! NetService)
             
             for (key, value) in result {
                 if key as! String == "name" {
@@ -75,8 +69,8 @@ class DiscoveryTableViewController: BaseTableViewController, NSNetServiceDelegat
                 }
                 
                 if key as! String == "addresses" {
-                    if value.count > 0 {
-                        self.serviceIps.append(value[0] as! String)
+                    if (value as AnyObject).count > 0 {
+                        self.serviceIps.append((value as! NSArray)[0] as! String)
                     }else{
                         self.serviceIps.append("")
                     }
@@ -93,64 +87,64 @@ class DiscoveryTableViewController: BaseTableViewController, NSNetServiceDelegat
         self.serviceIps.removeAll()
     }
     
-    func netServiceBrowser(netServiceBrowser: NSNetServiceBrowser,
-        didFindService netService: NSNetService,
+    func netServiceBrowser(_ netServiceBrowser: NetServiceBrowser,
+        didFind netService: NetService,
         moreComing moreServicesComing: Bool) {
             netService.delegate = self
-            netService.resolveWithTimeout(0)
-            self.services.addObject(netService) // keep strong reference to catch didResolveAddress
+            netService.resolve(withTimeout: 0)
+            self.services.add(netService) // keep strong reference to catch didResolveAddress
     }
     
-    func netServiceBrowser(netServiceBrowser: NSNetServiceBrowser,
-        didRemoveService netService: NSNetService,
+    func netServiceBrowser(_ netServiceBrowser: NetServiceBrowser,
+        didRemove netService: NetService,
         moreComing moreServicesComing: Bool) {
             self.clearVariables()
-            self.services.removeObject(netService)
+            self.services.remove(netService)
             
             if !moreServicesComing {
                 self.updateTable()
             }
     }
     
-    func netServiceDidResolveAddress(netService: NSNetService) {
+    func netServiceDidResolveAddress(_ netService: NetService) {
         self.clearVariables()
         self.updateTable()
     }
     
-    private func jsonifyService(netService: NSNetService) -> NSDictionary {
+    fileprivate func jsonifyService(_ netService: NetService) -> NSDictionary {
         
         let addresses: [String] = IP(netService.addresses)
         
         var txtRecord: [String: String] = [:]
-        let dict = NSNetService.dictionaryFromTXTRecordData(netService.TXTRecordData()!)
+        let dict = NetService.dictionary(fromTXTRecord: netService.txtRecordData()!)
         for (key, data) in dict {
-            txtRecord[key] = String(data: data, encoding:NSUTF8StringEncoding)
+            txtRecord[key] = String(data: data, encoding:String.Encoding.utf8)
         }
         
         let service: NSDictionary = NSDictionary(
             objects: [netService.domain, netService.type, netService.port, netService.name, addresses, txtRecord],
-            forKeys: ["domain", "type", "port", "name", "addresses", "txtRecord"])
+            forKeys: ["domain" as NSCopying, "type" as NSCopying, "port" as NSCopying, "name" as NSCopying, "addresses" as NSCopying, "txtRecord" as NSCopying])
         
         return service
     }
     
     // http://dev.eltima.com/post/99996366184/using-bonjour-in-swift
-    private func IP(addresses: [NSData]?) -> [String] {
+    fileprivate func IP(_ addresses: [Data]?) -> [String] {
         var ips: [String] = []
         if addresses != nil {
             for addressBytes in addresses! {
                 var inetAddress : sockaddr_in!
                 var inetAddress6 : sockaddr_in6!
                 //NSData’s bytes returns a read-only pointer to the receiver’s contents.
-                let inetAddressPointer = UnsafePointer<sockaddr_in>(addressBytes.bytes)
+                let inetAddressPointer = (addressBytes as NSData).bytes.bindMemory(to: sockaddr_in.self, capacity: addressBytes.count)
                 //Access the underlying raw memory
-                inetAddress = inetAddressPointer.memory
+                inetAddress = inetAddressPointer.pointee
                 if inetAddress.sin_family == __uint8_t(AF_INET) {
                 }
                 else {
                     if inetAddress.sin_family == __uint8_t(AF_INET6) {
-                        let inetAddressPointer6 = UnsafePointer<sockaddr_in6>(addressBytes.bytes)
-                        inetAddress6 = inetAddressPointer6.memory
+                        let inetAddressPointer6 = (addressBytes as NSData).bytes.bindMemory(to: sockaddr_in6.self, capacity: addressBytes.count)
+                        inetAddress6 = inetAddressPointer6.pointee
                         inetAddress = nil
                     }
                     else {
@@ -159,7 +153,7 @@ class DiscoveryTableViewController: BaseTableViewController, NSNetServiceDelegat
                 }
                 var ipString : UnsafePointer<CChar>?
                 //static func alloc(num: Int) -> UnsafeMutablePointer
-                let ipStringBuffer = UnsafeMutablePointer<CChar>.alloc(Int(INET6_ADDRSTRLEN))
+                let ipStringBuffer = UnsafeMutablePointer<CChar>.allocate(capacity: Int(INET6_ADDRSTRLEN))
                 if inetAddress != nil {
                     var addr = inetAddress.sin_addr
                     ipString = inet_ntop(Int32(inetAddress.sin_family),
@@ -176,9 +170,9 @@ class DiscoveryTableViewController: BaseTableViewController, NSNetServiceDelegat
                     }
                 }
                 if ipString != nil {
-                    let ip = String.fromCString(ipString!)
-                    if ip != nil {
-                        ips.append(ip!)
+                    let ip = String(cString: ipString!)
+                    if !ip.isEmpty {
+                        ips.append(ip)
                     }
                 }
             }

@@ -1,0 +1,6 @@
+framework module Pods_KodiRemote {
+  umbrella header "Pods-KodiRemote-umbrella.h"
+
+  export *
+  module * { export * }
+}

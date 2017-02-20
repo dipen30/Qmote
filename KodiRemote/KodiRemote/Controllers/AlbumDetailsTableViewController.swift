@@ -1,6 +1,6 @@
 //
 //  AlbumDetailsTableViewController.swift
-//  KodiRemote
+//  Kodi Remote 
 //
 //  Created by Quixom Technology on 06/01/16.
 //  Copyright © 2016 Quixom Technology. All rights reserved.
@@ -9,12 +9,11 @@
 import UIKit
 
 class AlbumDetailsTableViewController: UITableViewController {
-
+    
     var albumId = Int()
     var albumName = String()
-    var songsName = [String]()
-    var imageCache = [String:UIImage]()
-    var songImages = [String]()
+    
+    var albumDetailObjs = NSArray()
     
     var rc: RemoteCalls!
     
@@ -22,116 +21,103 @@ class AlbumDetailsTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationItem.title = albumName
+    override func viewWillAppear(_ animated: Bool) {
+        
+        var params = ""
+        if self.albumId != 0{
+            params = "\"filter\":{\"albumid\":\(self.albumId)},"
+            self.navigationItem.title = albumName
+        }
         
         rc = RemoteCalls(ipaddress: global_ipaddress, port: global_port)
-        rc.jsonRpcCall("AudioLibrary.GetSongs", params: "{\"filter\":{\"albumid\":\(albumId)},\"properties\":[\"thumbnail\",\"genre\",\"artist\"]}"){ (response: AnyObject?) in
+        rc.jsonRpcCall("AudioLibrary.GetSongs", params: "{\(params)\"properties\":[\"thumbnail\",\"genre\",\"album\",\"albumartist\"]}"){ (response: AnyObject?) in
             self.generateResponse(response as! NSDictionary)
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.songsName.count
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.albumDetailObjs.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("AlbumDetailsTableViewCell", forIndexPath: indexPath) as! AlbumDetailsTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumDetailsTableViewCell", for: indexPath) as! AlbumDetailsTableViewCell
         
-        let row = indexPath.row
-        cell.songName.text = self.songsName[row]
+        let albumDetails = self.albumDetailObjs[(indexPath as NSIndexPath).row] as! NSDictionary
+        cell.songName.text = albumDetails["label"] as? String
         
-        if self.songImages[row] != "" {
-            let url = NSURL(string: self.songImages[row])
+        cell.albumArtists.text = (albumDetails["albumartist"]! as AnyObject).componentsJoined(by: ",")
+        let album = albumDetails["album"] as! String
+        let genre = (albumDetails["genre"]! as AnyObject).componentsJoined(by: ",")
+        
+        cell.otherDetails.text = album + " | " + genre
+        
+        let thumbnail = albumDetails["thumbnail"] as! String
+        
+        if thumbnail != "" {
+            cell.songInitial.isHidden = true
+            cell.songImage.isHidden = false
             
-            cell.songImage.contentMode = .ScaleAspectFit
+            let url = URL(string: getThumbnailUrl(thumbnail))
             
-            if let img = self.imageCache[self.songImages[row]]{
-                cell.songImage.image = img
-            }else{
-                self.downloadImage(url!, imageURL: cell.songImage)
-            }
+            cell.songImage.contentMode = .scaleAspectFit
+            cell.songImage.kf.setImage(with: url!)
+            
         }else{
-            /*cell.albumImage.hidden = true
-            cell.albumInitial.hidden = false
+            cell.songInitial.isHidden = false
+            cell.songImage.isHidden = true
             let randomColor = backgroundColors[Int(arc4random_uniform(UInt32(backgroundColors.count)))]
-            cell.albumInitial.text = self.albumInitials[row]
-            cell.albumInitial.backgroundColor = UIColor(hex: randomColor)*/
+            
+            let name = albumDetails["label"] as! String
+            let index1 = name.characters.index(name.startIndex, offsetBy: 1)
+            
+            cell.songInitial.text = name.substring(to: index1)
+            cell.songInitial.backgroundColor = UIColor(hex: randomColor)
         }
-        
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRectMake(0.0, cell.frame.height - 1, cell.frame.width, 0.5)
-        bottomLine.backgroundColor = UIColor.grayColor().CGColor
-        cell.layer.addSublayer(bottomLine)
-        cell.clipsToBounds = true
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         self.rc.jsonRpcCall("Playlist.clear", params: "{\"playlistid\":0}"){ (response: AnyObject?) in
-            self.rc.jsonRpcCall("Playlist.Add", params: "{\"playlistid\":0, \"item\":{\"albumid\":\(self.albumId)}}"){ (response: AnyObject?) in
-                self.rc.jsonRpcCall("Player.Open", params: "{\"item\":{\"playlistid\":0, \"position\": \(indexPath.row)}}"){ (response: AnyObject?) in
+            if self.albumId != 0 {
+                self.rc.jsonRpcCall("Playlist.Add", params: "{\"playlistid\":0, \"item\":{\"albumid\":\(self.albumId)}}"){ (response: AnyObject?) in
+                    self.rc.jsonRpcCall("Player.Open", params: "{\"item\":{\"playlistid\":0, \"position\": \((indexPath as NSIndexPath).row)}}"){ (response: AnyObject?) in
+                    }
+                }
+            }else{
+                let song = self.albumDetailObjs[(indexPath as NSIndexPath).row] as! NSDictionary
+                self.rc.jsonRpcCall("Playlist.Add", params: "{\"playlistid\":0, \"item\":{\"songid\":\(song["songid"] as! Int)}}"){ (response: AnyObject?) in
+                    self.rc.jsonRpcCall("Player.Open", params: "{\"item\":{\"playlistid\":0}}"){ (response: AnyObject?) in
+                    }
                 }
             }
         }
     }
     
-    func downloadImage(url: NSURL, imageURL: UIImageView){
-        getImageDataFromUrl(url) { (data, response, error)  in
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                guard let data = data where error == nil else { return }
-                let image = UIImage(data: data)
-                self.imageCache[url.absoluteString] = image
-                imageURL.image = image
-            }
-        }
-    }
-
-    func generateResponse(jsonData: AnyObject){
-        let total = jsonData["limits"]!!["total"] as! Int
+    func generateResponse(_ jsonData: AnyObject){
+        let total = (jsonData["limits"] as! NSDictionary)["total"] as! Int
         
         if total != 0 {
             let albumDetails = jsonData["songs"] as! NSArray
             
-            for item in albumDetails{
-                let obj = item as! NSDictionary
-                for (key, value) in obj {
-                    
-                    if key as! String == "label" {
-                        let name = value as! String
-                        self.songsName.append(name)
-                    }
-                    
-                    if key as! String == "thumbnail"{
-                        var thumbnail = value as! String
-                        
-                        if thumbnail != "" {
-                            thumbnail = thumbnail.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
-                            self.songImages.append("http://" + global_ipaddress + ":" + global_port + "/image/" + thumbnail)
-                        }else{
-                            self.songImages.append("")
-                        }
-                    }
-                }
-            }
+            self.albumDetailObjs = albumDetails
         }else {
             // Display No data found message
         }
     }
-
+    
 }
