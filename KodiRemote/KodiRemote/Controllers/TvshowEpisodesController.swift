@@ -1,6 +1,6 @@
 //
 //  TvshowEpisodesController.swift
-//  KodiRemote
+//  Kodi Remote 
 //
 //  Created by Quixom Technology on 01/04/16.
 //  Copyright © 2016 Quixom Technology. All rights reserved.
@@ -10,13 +10,7 @@ import UIKit
 
 class TvshowEpisodesController: UITableViewController {
 
-    var episodeImages = [String]()
-    var episodeTitles = [String]()
-    var episodeNumbers = [String]()
-    var episodeFiles = [String]()
-    var runtimes = [String]()
-    var episodesAired = [String]()
-    var imageCache = [String:UIImage]()
+    var episodesObj = NSArray()
     var season = Int()
     var seasonName = String()
     
@@ -32,7 +26,7 @@ class TvshowEpisodesController: UITableViewController {
             
             self.generateSeasonResponse(response as! NSDictionary)
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
@@ -43,92 +37,46 @@ class TvshowEpisodesController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.episodeTitles.count
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.episodesObj.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SeasonEpisodes", forIndexPath: indexPath) as! TvShowEpisodesViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SeasonEpisodes", for: indexPath) as! TvShowEpisodesViewCell
 
-        cell.episodeTitle.text = self.episodeTitles[indexPath.row]
-        cell.episodeAired.text = self.episodesAired[indexPath.row]
-        cell.episodeNumber.text = self.episodeNumbers[indexPath.row]
+        let episodeDetails = self.episodesObj[(indexPath as NSIndexPath).row] as! NSDictionary
+
+        cell.episodeTitle.text = episodeDetails["title"] as? String
+        cell.episodeAired.text = " | " + (episodeDetails["firstaired"] as! String)
+        cell.episodeNumber.text = String(episodeDetails["episode"] as! Int)
         
-        let url = NSURL(string: self.episodeImages[indexPath.row])
-        cell.episodeImage.contentMode = .ScaleAspectFit
+        let thumbnail = episodeDetails["thumbnail"] as! String
         
-        if let img = self.imageCache[self.episodeImages[indexPath.row]]{
-            cell.episodeImage.image = img
-        }else{
-            self.downloadImage(url!, imageURL: cell.episodeImage)
-        }
+        let url = URL(string: getThumbnailUrl(thumbnail))
+        cell.episodeImage.contentMode = .scaleAspectFit
+        cell.episodeImage.kf.setImage(with: url!)
 
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.rc.jsonRpcCall("Player.Open", params: "{\"item\":{\"file\":\"\(self.episodeFiles[indexPath.row])\"}}"){ (response: AnyObject?) in
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let episode = self.episodesObj[(indexPath as NSIndexPath).row] as! NSDictionary
+        self.rc.jsonRpcCall("Player.Open", params: "{\"item\":{\"episodeid\":\(episode["episodeid"] as! Int)}}"){ (response: AnyObject?) in
         }
     }
     
-    func downloadImage(url: NSURL, imageURL: UIImageView){
-        getImageDataFromUrl(url) { (data, response, error)  in
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                guard let data = data where error == nil else { return }
-                let image = UIImage(data: data)
-                self.imageCache[url.absoluteString] = image
-                imageURL.image = image
-            }
-        }
-    }
-    
-    func generateSeasonResponse(jsonData: AnyObject){
-        let total = jsonData["limits"]!!["total"] as! Int
+    func generateSeasonResponse(_ jsonData: AnyObject){
+        let total = (jsonData["limits"] as! NSDictionary)["total"] as! Int
         
         if total != 0 {
             let seasons = jsonData["episodes"] as! NSArray
             
-            for item in seasons{
-                let obj = item as! NSDictionary
-                for (key, value) in obj {
-                    if key as! String == "title" {
-                        self.episodeTitles.append(value as! String)
-                    }
-                    
-                    if key as! String == "episode" {
-                        self.episodeNumbers.append(String(value as! Int))
-                    }
-                    
-                    if key as! String == "firstaired" {
-                        self.episodesAired.append(" | " + (value as! String))
-                    }
-                    
-                    if key as! String == "runtime" {
-                        let runtime = value as! Int / 60
-                        self.runtimes.append(String(runtime) + " min")
-                    }
-                    
-                    if key as! String == "file" {
-                        var file_name = value as! String
-                        if file_name.hasPrefix("http") || file_name.hasPrefix("plugin"){
-                            self.episodeFiles.append(file_name)
-                        }else{
-                            file_name = file_name.stringByReplacingOccurrencesOfString("\\", withString: "/")
-                            self.episodeFiles.append(file_name)
-                        }
-                    }
-                    
-                    if key as! String == "thumbnail"{
-                        var thumbnail = value as! String
-                        thumbnail = thumbnail.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
-                        self.episodeImages.append("http://" + global_ipaddress + ":" + global_port + "/image/" + thumbnail)
-                    }
-                }
-            }
+            self.episodesObj = seasons
+
         }else {
             // Display No data found message
         }

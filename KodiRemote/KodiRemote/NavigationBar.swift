@@ -1,9 +1,9 @@
 //
-//  BackTableVC.swift
+//  NavigationBar.swift
 //  SlideoutMenu
 //
-//  Created by Jared Davidson on 4/8/15.
-//  Copyright (c) 2015 Archetapp. All rights reserved.
+//  Created by Quixom Technology on 22/02/16.
+//  Copyright © 2016 Quixom Technology. All rights reserved.
 //
 
 import Foundation
@@ -11,23 +11,34 @@ import Foundation
 class NavigationBar: UITableViewController {
     
     var TableArray = [String]()
+    var ImagesArray = [String]()
     
     override func viewDidLoad() {
-        TableArray = ["Remote","Movies","TV Shows", "Music", "Files", "Addons", "Discover Media"]
-        
-        //tableView.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+        TableArray = ["Remote","Movies","TV Shows", "Music", "Mouse", "Add on", "Discover Media", "Cast"]
+        ImagesArray = ["Remote", "movie", "video", "music", "Mouse", "Add on", "Devices", "cast"]
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TableArray.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(TableArray[indexPath.row], forIndexPath: indexPath) as UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableArray[(indexPath as NSIndexPath).row], for: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = TableArray[indexPath.row]
-        //cell.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
-        cell.textLabel?.textColor = UIColor.blackColor()
+        cell.textLabel?.text = TableArray[(indexPath as NSIndexPath).row]
+        cell.imageView?.image = UIImage(named: ImagesArray[(indexPath as NSIndexPath).row])
+        
+        /* image resizing */
+        let itemSize:CGSize = CGSize(width: 20, height: 20)
+        UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.main.scale)
+        let imageRect : CGRect = CGRect(x: 0, y: 0, width: itemSize.width, height: itemSize.height)
+        cell.imageView!.image?.draw(in: imageRect)
+        cell.imageView!.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        
+        cell.textLabel?.textColor = UIColor.black
+        
         return cell
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACBA7D9A966AB60820463009 /* Pods_KodiRemote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6EB42D133F91C9E0EF3C7D1 /* Pods_KodiRemote.framework */; };
 		C1194F591CAD3DE200548545 /* TvShowSeasonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1194F581CAD3DE200548545 /* TvShowSeasonsTableViewCell.swift */; };
 		C12C85F31C7ADB5A0069E187 /* TvShowsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C85F21C7ADB5A0069E187 /* TvShowsTableViewController.swift */; };
 		C12C85F51C7B095A0069E187 /* TvShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C85F41C7B095A0069E187 /* TvShowTableViewCell.swift */; };
@@ -19,7 +20,6 @@
 		C13738E51C5F1F7000CC1814 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738E21C5F1F7000CC1814 /* Utils.swift */; };
 		C13738F21C5F1FFE00CC1814 /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738E81C5F1FFE00CC1814 /* MoviesTableViewController.swift */; };
 		C13738F31C5F1FFE00CC1814 /* RemoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738E91C5F1FFE00CC1814 /* RemoteController.swift */; };
-		C13738F51C5F1FFE00CC1814 /* FilesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738EB1C5F1FFE00CC1814 /* FilesController.swift */; };
 		C13738F61C5F1FFE00CC1814 /* AddonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738EC1C5F1FFE00CC1814 /* AddonTableViewController.swift */; };
 		C13738F71C5F1FFE00CC1814 /* ArtistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738ED1C5F1FFE00CC1814 /* ArtistTableViewController.swift */; };
 		C13738F81C5F1FFE00CC1814 /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13738EE1C5F1FFE00CC1814 /* AlbumsTableViewController.swift */; };
@@ -42,9 +42,27 @@
 		C13CDA261CAE461C009711FA /* TvshowEpisodesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13CDA251CAE461C009711FA /* TvshowEpisodesController.swift */; };
 		C13CDA281CAE4A9D009711FA /* TvShowEpisodesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13CDA271CAE4A9D009711FA /* TvShowEpisodesViewCell.swift */; };
 		C1582C9A1CABDBF40045C83A /* TvShowSeasonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1582C991CABDBF40045C83A /* TvShowSeasonsController.swift */; };
+		C1DEE7261E5AF48F002A4AA6 /* CastCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE7211E5AF48F002A4AA6 /* CastCollectionViewController.swift */; };
+		C1DEE7271E5AF48F002A4AA6 /* MouseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE7221E5AF48F002A4AA6 /* MouseController.swift */; };
+		C1DEE7281E5AF48F002A4AA6 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE7231E5AF48F002A4AA6 /* MovieDetailsViewController.swift */; };
+		C1DEE7291E5AF48F002A4AA6 /* PhotoCastCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE7241E5AF48F002A4AA6 /* PhotoCastCollectionViewController.swift */; };
+		C1DEE72A1E5AF48F002A4AA6 /* VideosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE7251E5AF48F002A4AA6 /* VideosCollectionViewController.swift */; };
+		C1DEE7311E5AF4DB002A4AA6 /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE72C1E5AF4DB002A4AA6 /* ysocket.swift */; };
+		C1DEE7321E5AF4DB002A4AA6 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE72D1E5AF4DB002A4AA6 /* ytcpsocket.c */; };
+		C1DEE7331E5AF4DB002A4AA6 /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE72E1E5AF4DB002A4AA6 /* ytcpsocket.swift */; };
+		C1DEE7341E5AF4DB002A4AA6 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE72F1E5AF4DB002A4AA6 /* yudpsocket.c */; };
+		C1DEE7351E5AF4DB002A4AA6 /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE7301E5AF4DB002A4AA6 /* yudpsocket.swift */; };
+		C1DEE7391E5AF5DA002A4AA6 /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE7361E5AF5DA002A4AA6 /* CastCollectionViewCell.swift */; };
+		C1DEE73A1E5AF5DA002A4AA6 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE7371E5AF5DA002A4AA6 /* PhotoCollectionViewCell.swift */; };
+		C1DEE73B1E5AF5DA002A4AA6 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE7381E5AF5DA002A4AA6 /* VideoCollectionViewCell.swift */; };
+		C1DEE73F1E5AF627002A4AA6 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE73C1E5AF627002A4AA6 /* ActivityIndicator.swift */; };
+		C1DEE7401E5AF627002A4AA6 /* CastPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE73D1E5AF627002A4AA6 /* CastPlayer.swift */; };
+		C1DEE7411E5AF627002A4AA6 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEE73E1E5AF627002A4AA6 /* Downloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E60DD5A392C2215BDDD671B /* Pods-KodiRemote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KodiRemote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KodiRemote/Pods-KodiRemote.debug.xcconfig"; sourceTree = "<group>"; };
+		B378D588BED47B6A7E0D7E4A /* Pods-KodiRemote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KodiRemote.release.xcconfig"; path = "Pods/Target Support Files/Pods-KodiRemote/Pods-KodiRemote.release.xcconfig"; sourceTree = "<group>"; };
 		C1194F581CAD3DE200548545 /* TvShowSeasonsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowSeasonsTableViewCell.swift; sourceTree = "<group>"; };
 		C12C85F21C7ADB5A0069E187 /* TvShowsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowsTableViewController.swift; sourceTree = "<group>"; };
 		C12C85F41C7B095A0069E187 /* TvShowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowTableViewCell.swift; sourceTree = "<group>"; };
@@ -59,7 +77,6 @@
 		C13738E21C5F1F7000CC1814 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C13738E81C5F1FFE00CC1814 /* MoviesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		C13738E91C5F1FFE00CC1814 /* RemoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteController.swift; sourceTree = "<group>"; };
-		C13738EB1C5F1FFE00CC1814 /* FilesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesController.swift; sourceTree = "<group>"; };
 		C13738EC1C5F1FFE00CC1814 /* AddonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddonTableViewController.swift; sourceTree = "<group>"; };
 		C13738ED1C5F1FFE00CC1814 /* ArtistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTableViewController.swift; sourceTree = "<group>"; };
 		C13738EE1C5F1FFE00CC1814 /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +101,23 @@
 		C13CDA251CAE461C009711FA /* TvshowEpisodesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvshowEpisodesController.swift; sourceTree = "<group>"; };
 		C13CDA271CAE4A9D009711FA /* TvShowEpisodesViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowEpisodesViewCell.swift; sourceTree = "<group>"; };
 		C1582C991CABDBF40045C83A /* TvShowSeasonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowSeasonsController.swift; sourceTree = "<group>"; };
+		C1DEE7211E5AF48F002A4AA6 /* CastCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastCollectionViewController.swift; sourceTree = "<group>"; };
+		C1DEE7221E5AF48F002A4AA6 /* MouseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseController.swift; sourceTree = "<group>"; };
+		C1DEE7231E5AF48F002A4AA6 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		C1DEE7241E5AF48F002A4AA6 /* PhotoCastCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCastCollectionViewController.swift; sourceTree = "<group>"; };
+		C1DEE7251E5AF48F002A4AA6 /* VideosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosCollectionViewController.swift; sourceTree = "<group>"; };
+		C1DEE72C1E5AF4DB002A4AA6 /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
+		C1DEE72D1E5AF4DB002A4AA6 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
+		C1DEE72E1E5AF4DB002A4AA6 /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
+		C1DEE72F1E5AF4DB002A4AA6 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
+		C1DEE7301E5AF4DB002A4AA6 /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
+		C1DEE7361E5AF5DA002A4AA6 /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
+		C1DEE7371E5AF5DA002A4AA6 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		C1DEE7381E5AF5DA002A4AA6 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		C1DEE73C1E5AF627002A4AA6 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		C1DEE73D1E5AF627002A4AA6 /* CastPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastPlayer.swift; sourceTree = "<group>"; };
+		C1DEE73E1E5AF627002A4AA6 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		D6EB42D133F91C9E0EF3C7D1 /* Pods_KodiRemote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KodiRemote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,17 +125,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACBA7D9A966AB60820463009 /* Pods_KodiRemote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89C5D82A10C1197C71E4104D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6EB42D133F91C9E0EF3C7D1 /* Pods_KodiRemote.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C13738C11C5F1E2000CC1814 = {
 			isa = PBXGroup;
 			children = (
 				C13738CC1C5F1E2000CC1814 /* KodiRemote */,
 				C13738CB1C5F1E2000CC1814 /* Products */,
+				CE04549563ACDC482CE33C6C /* Pods */,
+				89C5D82A10C1197C71E4104D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +161,7 @@
 		C13738CC1C5F1E2000CC1814 /* KodiRemote */ = {
 			isa = PBXGroup;
 			children = (
+				C1DEE72B1E5AF4DB002A4AA6 /* ysocket */,
 				C13738E71C5F1FF000CC1814 /* Controllers */,
 				C13738E61C5F1FA300CC1814 /* TableCells */,
 				C13738DF1C5F1F2F00CC1814 /* utils */,
@@ -138,6 +184,9 @@
 		C13738DF1C5F1F2F00CC1814 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				C1DEE73C1E5AF627002A4AA6 /* ActivityIndicator.swift */,
+				C1DEE73D1E5AF627002A4AA6 /* CastPlayer.swift */,
+				C1DEE73E1E5AF627002A4AA6 /* Downloader.swift */,
 				C13738E01C5F1F7000CC1814 /* RemoteCalls.swift */,
 				C13738E11C5F1F7000CC1814 /* Globals.swift */,
 				C13738E21C5F1F7000CC1814 /* Utils.swift */,
@@ -148,6 +197,9 @@
 		C13738E61C5F1FA300CC1814 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				C1DEE7361E5AF5DA002A4AA6 /* CastCollectionViewCell.swift */,
+				C1DEE7371E5AF5DA002A4AA6 /* PhotoCollectionViewCell.swift */,
+				C1DEE7381E5AF5DA002A4AA6 /* VideoCollectionViewCell.swift */,
 				C13738FC1C5F200900CC1814 /* MoviesTableViewCell.swift */,
 				C13738FD1C5F200900CC1814 /* AddonTableViewCell.swift */,
 				C13738FE1C5F200900CC1814 /* ArtistsTableViewCell.swift */,
@@ -165,9 +217,13 @@
 		C13738E71C5F1FF000CC1814 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C1DEE7211E5AF48F002A4AA6 /* CastCollectionViewController.swift */,
+				C1DEE7221E5AF48F002A4AA6 /* MouseController.swift */,
+				C1DEE7231E5AF48F002A4AA6 /* MovieDetailsViewController.swift */,
+				C1DEE7241E5AF48F002A4AA6 /* PhotoCastCollectionViewController.swift */,
+				C1DEE7251E5AF48F002A4AA6 /* VideosCollectionViewController.swift */,
 				C13738E81C5F1FFE00CC1814 /* MoviesTableViewController.swift */,
 				C13738E91C5F1FFE00CC1814 /* RemoteController.swift */,
-				C13738EB1C5F1FFE00CC1814 /* FilesController.swift */,
 				C13738EC1C5F1FFE00CC1814 /* AddonTableViewController.swift */,
 				C13738ED1C5F1FFE00CC1814 /* ArtistTableViewController.swift */,
 				C13738EE1C5F1FFE00CC1814 /* AlbumsTableViewController.swift */,
@@ -182,6 +238,27 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C1DEE72B1E5AF4DB002A4AA6 /* ysocket */ = {
+			isa = PBXGroup;
+			children = (
+				C1DEE72C1E5AF4DB002A4AA6 /* ysocket.swift */,
+				C1DEE72D1E5AF4DB002A4AA6 /* ytcpsocket.c */,
+				C1DEE72E1E5AF4DB002A4AA6 /* ytcpsocket.swift */,
+				C1DEE72F1E5AF4DB002A4AA6 /* yudpsocket.c */,
+				C1DEE7301E5AF4DB002A4AA6 /* yudpsocket.swift */,
+			);
+			path = ysocket;
+			sourceTree = "<group>";
+		};
+		CE04549563ACDC482CE33C6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E60DD5A392C2215BDDD671B /* Pods-KodiRemote.debug.xcconfig */,
+				B378D588BED47B6A7E0D7E4A /* Pods-KodiRemote.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,9 +266,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C13738DC1C5F1E2000CC1814 /* Build configuration list for PBXNativeTarget "KodiRemote" */;
 			buildPhases = (
+				2F2C0F69E88D1F0D1D258A88 /* [CP] Check Pods Manifest.lock */,
 				C13738C61C5F1E2000CC1814 /* Sources */,
 				C13738C71C5F1E2000CC1814 /* Frameworks */,
 				C13738C81C5F1E2000CC1814 /* Resources */,
+				A36002D16E590F27014C316F /* [CP] Embed Pods Frameworks */,
+				654FDCAB87F1302F985C14AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,11 +289,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Quixom Technology";
 				TargetAttributes = {
 					C13738C91C5F1E2000CC1814 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 65F532Z3JH;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -248,6 +330,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2F2C0F69E88D1F0D1D258A88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		654FDCAB87F1302F985C14AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KodiRemote/Pods-KodiRemote-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A36002D16E590F27014C316F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KodiRemote/Pods-KodiRemote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C13738C61C5F1E2000CC1814 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,33 +388,48 @@
 				C13738FA1C5F1FFE00CC1814 /* AlbumDetailsTableViewController.swift in Sources */,
 				C13738F21C5F1FFE00CC1814 /* MoviesTableViewController.swift in Sources */,
 				C13738F81C5F1FFE00CC1814 /* AlbumsTableViewController.swift in Sources */,
+				C1DEE7311E5AF4DB002A4AA6 /* ysocket.swift in Sources */,
+				C1DEE7271E5AF48F002A4AA6 /* MouseController.swift in Sources */,
 				C13739041C5F200900CC1814 /* AddonTableViewCell.swift in Sources */,
 				C137391C1C5F21B900CC1814 /* NavigationBar.swift in Sources */,
+				C1DEE7401E5AF627002A4AA6 /* CastPlayer.swift in Sources */,
 				C13738E51C5F1F7000CC1814 /* Utils.swift in Sources */,
 				C13738E41C5F1F7000CC1814 /* Globals.swift in Sources */,
 				C13739061C5F200900CC1814 /* AlbumsTableViewCell.swift in Sources */,
+				C1DEE7351E5AF4DB002A4AA6 /* yudpsocket.swift in Sources */,
+				C1DEE7331E5AF4DB002A4AA6 /* ytcpsocket.swift in Sources */,
 				C1399C341C7C7BBE00D9AD3B /* TvShowDetailsController.swift in Sources */,
+				C1DEE7391E5AF5DA002A4AA6 /* CastCollectionViewCell.swift in Sources */,
+				C1DEE73F1E5AF627002A4AA6 /* ActivityIndicator.swift in Sources */,
 				C12C85F51C7B095A0069E187 /* TvShowTableViewCell.swift in Sources */,
 				C13739071C5F200900CC1814 /* GenreTableViewCell.swift in Sources */,
+				C1DEE7341E5AF4DB002A4AA6 /* yudpsocket.c in Sources */,
 				C13738D01C5F1E2000CC1814 /* ViewController.swift in Sources */,
 				C13738FB1C5F1FFE00CC1814 /* DiscoveryTableViewController.swift in Sources */,
+				C1DEE72A1E5AF48F002A4AA6 /* VideosCollectionViewController.swift in Sources */,
+				C1DEE73B1E5AF5DA002A4AA6 /* VideoCollectionViewCell.swift in Sources */,
+				C1DEE7281E5AF48F002A4AA6 /* MovieDetailsViewController.swift in Sources */,
 				C13738F91C5F1FFE00CC1814 /* GenreTableViewController.swift in Sources */,
 				C137391F1C5F29D100CC1814 /* SWRevealViewController.m in Sources */,
 				C13738E31C5F1F7000CC1814 /* RemoteCalls.swift in Sources */,
 				C13739031C5F200900CC1814 /* MoviesTableViewCell.swift in Sources */,
-				C13738F51C5F1FFE00CC1814 /* FilesController.swift in Sources */,
 				C1582C9A1CABDBF40045C83A /* TvShowSeasonsController.swift in Sources */,
 				C13738F31C5F1FFE00CC1814 /* RemoteController.swift in Sources */,
+				C1DEE7291E5AF48F002A4AA6 /* PhotoCastCollectionViewController.swift in Sources */,
+				C1DEE7411E5AF627002A4AA6 /* Downloader.swift in Sources */,
 				C1194F591CAD3DE200548545 /* TvShowSeasonsTableViewCell.swift in Sources */,
 				C137391A1C5F21B900CC1814 /* BaseTabBarController.swift in Sources */,
 				C137391B1C5F21B900CC1814 /* BaseTableViewController.swift in Sources */,
 				C13CDA281CAE4A9D009711FA /* TvShowEpisodesViewCell.swift in Sources */,
 				C13739051C5F200900CC1814 /* ArtistsTableViewCell.swift in Sources */,
 				C13738F61C5F1FFE00CC1814 /* AddonTableViewController.swift in Sources */,
+				C1DEE7321E5AF4DB002A4AA6 /* ytcpsocket.c in Sources */,
 				C13738F71C5F1FFE00CC1814 /* ArtistTableViewController.swift in Sources */,
 				C13739081C5F200900CC1814 /* AlbumDetailsTableViewCell.swift in Sources */,
 				C12C85F31C7ADB5A0069E187 /* TvShowsTableViewController.swift in Sources */,
 				C13738CE1C5F1E2000CC1814 /* AppDelegate.swift in Sources */,
+				C1DEE73A1E5AF5DA002A4AA6 /* PhotoCollectionViewCell.swift in Sources */,
+				C1DEE7261E5AF48F002A4AA6 /* CastCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,8 +468,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -368,8 +515,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -388,6 +537,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -395,29 +545,37 @@
 		};
 		C13738DD1C5F1E2000CC1814 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E60DD5A392C2215BDDD671B /* Pods-KodiRemote.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 65F532Z3JH;
 				INFOPLIST_FILE = KodiRemote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quixom.KodiRemote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "KodiRemote/KodiRemote-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		C13738DE1C5F1E2000CC1814 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B378D588BED47B6A7E0D7E4A /* Pods-KodiRemote.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 65F532Z3JH;
 				INFOPLIST_FILE = KodiRemote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quixom.KodiRemote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "KodiRemote/KodiRemote-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
